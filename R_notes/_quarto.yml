@@ -1,6 +1,6 @@
 project:
   type: book
-  output-dir: docs
+  output-dir: _book
 
 book:
   title: "R data science_notes"
@@ -14,9 +14,33 @@ book:
 
 bibliography: references.bib
 
-format:
-  html:
+execute:
+  warning: false
+toc: true
+toc-depth: 3
+toc-location: right
+number-sections: true
+knitr:
+  opts_chunk: 
+    comment: "#>" 
+    collapse: TRUE
+    cache: TRUE
+crossref: 
+  fig-title: 图
+  fig-prefix: 图
+  
+fig-width: 6
+fig-asp: 0.618
+
+format: 
+  html: 
     theme: cosmo
+    df-print: kable
+    code-fold: true
+    code-tools: true
+    code-link: true
+    html-math-method: katex
+    
 
 editor: visual
 
