@@ -3,9 +3,9 @@ project:
   output-dir: docs
 
 book:
-  title: "R data science_notes"
+  title: "Data Science_notes"
   author: "王安林"
-  date: "2023/12/20"
+  date: "2024/2/29"
   chapters:
     - index.qmd
     - intro.qmd
