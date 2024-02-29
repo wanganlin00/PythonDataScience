@@ -1,0 +1,233 @@
+---
+knitr: 
+  opts_chunk: 
+    comment: "#>>>"
+    collapse: TRUE
+number-sections: true
+code-fold: show
+code-link: true
+code-tools: true
+---
+
+# Control structure
+
+## if 语句
+
+### if语句
+
+```         
+if conditional_test1:
+    do something
+if conditional_test2:
+    do something
+......
+if conditional_testn:
+    do something
+```
+
+### if-else 语句
+
+```         
+if conditional_test:
+    do something
+else:
+    do anotherthing
+```
+
+### if-elif-else 语句
+
+`else:`可省略
+
+```         
+if conditional_test1:
+    do something
+elif conditional_test2:
+    do something
+......
+elif condtional_testn:
+    do something
+else:
+    do otherthings
+```
+
+```{python}
+cars = ["audi","bmW","subaru","toyota"] 
+for i in cars: 
+    if i.lower()=='bmw': 
+        i.upper() 
+    else: 
+        i.title()
+```
+
+与 `and`、或`or`
+
+```{python}
+ages = [17,34,29,18,46,55,9,60,35,14,56,64] 
+state = [] 
+for i in ages: 
+    if i <18: 
+        state.append("young") 
+    elif i>=18 and i<60: 
+        state.append("adult") 
+    else: 
+        state.append("elder") 
+state
+```
+
+在或不在 `in`、`not in`
+
+```{python}
+users = ["小米","小亮","小美","小明","小帅"]
+
+user1 = "小美" 
+if user1 in users:
+    print(f"欢迎光临,{user1}!")
+user2 = "小花"
+if user2 not in users:
+    print(f"请加入我们，{user2}!")
+```
+
+### 确定列表非空
+
+对于数值`0`，空值`None`，单引号空字符串`''`，双引号空字符串`""`，空列表`[]`，空元组`()`，空字典`{}`，python都会返回False。
+
+```{python}
+users = []
+
+if users:
+    for i in users:
+        print(f"欢迎光临,{i}!")
+else:
+    print("无人使用")
+```
+
+### 使用多个列表
+
+```{python}
+invited = ["A","S","D","F","G","H","J","K"]
+present = ["A","F","Z","X","K","C"]
+
+for pre in present:
+    if pre in invited:
+        print(f"欢迎您的到来，{pre}先生/女士！")
+    else:
+        print(f"抱歉，{pre}先生/女士，你没有请柬，无法进入。")
+print("\n 欢迎")
+```
+
+## while循环
+
+```{python}
+i=0
+while i<=9:
+    print(i)
+    i=i+1
+```
+
+### 用户选择退出循环
+
+```{python}
+#| eval: false
+prompt = "\n 输入一条消息，我将会复述一遍:\n 输入 quit 结束程序。"
+message = ""
+while message != 'quit':
+    message = input(prompt)
+    if message !='quit':
+        print(message)
+```
+
+### 使用标志flag
+
+```{python}
+#| eval: false
+prompt = "\n 输入一条消息，我将会复述一遍:\n 输入 quit 结束程序。"
+active = True
+while active:
+    message = input(prompt)
+    if message !='quit':
+        print(message)
+    else:
+        active =False
+```
+
+### 使用break退出循环
+
+```{python}
+#| eval: false
+prompt = "\n 输入一条消息，我将会复述一遍:\n 输入 quit 结束程序。"
+while True:
+    message = input(prompt)
+    if message !='quit':
+        print(message)
+    else:
+        break
+```
+
+### 在循环中使用continue
+
+```{python}
+i=0
+while i <10:
+    i=i+1
+    if i%2 ==0:
+        continue
+    print(i)
+```
+
+### 使用while循环处理列表和字典
+
+#### 在列表之间移动元素
+
+```{python}
+# 首先，创建一个待验证用户列表 
+# 和一个用于存储已验证用户的空列表
+unconfirmed_users = ['alice', 'brian', 'candace'] 
+confirmed_users = [] 
+
+# 验证每个用户，直到没有未验证用户为止
+# 将每个经过验证的用户都移到已验证用户列表中
+while unconfirmed_users:
+    current_user = unconfirmed_users.pop() 
+    print(f"Verifying user: {current_user.title()}")
+    confirmed_users.append(current_user) 
+    
+# 显示所有的已验证用户 
+print("\nThe following users have been confirmed:") 
+for confirmed_user in confirmed_users: 
+    print(confirmed_user.title())
+
+```
+
+#### 删除所有特定值
+
+```{python}
+pets = ['dog', 'cat', 'dog', 'goldfish', 'cat', 'rabbit', 'cat']
+print(pets)
+while 'cat' in pets: 
+    pets.remove('cat')
+print(pets)
+```
+
+#### 让用户填充字典
+
+```{python}
+#| eval: false
+# 调查程序
+responses = {}
+flag = True
+
+
+while flag:
+    # 提示被调查者输入性名和回答,存储在字典中
+    name = input("\n What is your name?")
+    response = input("What is your favorite fruit?")
+    responses[name] = response
+    
+    repeat = input("Whether to move on to the next person (yes/no)")
+    if repeat == "no":
+        flag = False
+
+print("\n ---Results---")
+for i,j in responses.items():
+        print(f"{i}'s favorite fruit is {j}.")
+```

@@ -7,18 +7,29 @@ book:
   author: "王安林"
   date: "2023/12/20"
   chapters:
-    - part: "basic R"
-      chapters: 
-        - index.qmd
-        - intro.qmd
-    - part: "tidyverse R"
+    - index.qmd
+    - intro.qmd
+    - part: "R"
       chapters: 
         - summary.qmd
         - references.qmd
+    - part: "R <-> Python"
+      chapters: 
+        - R-Python.qmd
+    - part: "Python"
+      chapters: 
+        - 01basics.qmd
+        - 02list.qmd
+        - 03dictionary.qmd
+        - control_structure.qmd
+        - function.qmd
+        - class.qmd
+
 
 bibliography: references.bib
 
 execute:
+  cache: true
   warning: false
 toc: true
 toc-depth: 4
