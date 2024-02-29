@@ -1,0 +1,36 @@
+
+Python package index（pypi） 是一个Python编程语言的软件库。
+
+package[ˈpækɪdʒ]：程序包。
+
+index [ˈɪndeks]：索引。
+
+
+python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ --upgrade pip 
+
+
+pip list
+pip --version
+
+pip install module
+pip uninstall module
+
+python --version
+
+
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/ numpy
+
+# 安装 virtualenv
+pip install virtualenv
+
+# 在项目目录中创建虚拟环境
+python -m venv venv
+
+# 激活虚拟环境
+# Windows:
+venv\Scripts\activate
+# macOS/Linux:
+source venv/bin/activate
+
+# 在虚拟环境中安装 scanpy
+pip install scanpy
