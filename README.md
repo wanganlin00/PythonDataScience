@@ -1,4 +1,4 @@
-# R data sciecnce
+# data sciecnce
 
 tidyverse 数据处理和数据可视化
 
