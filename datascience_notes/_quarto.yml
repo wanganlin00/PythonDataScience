@@ -13,12 +13,13 @@ book:
       chapters: 
         - summary.qmd
         - references.qmd
-    - part: "R <-> Python"
+    - part: "R<->Python"
       chapters: 
         - R-Python.qmd
     - part: "Python"
       chapters: 
-        - 01basics.qmd
+        - preface.qmd
+        - 01basic_data_type.qmd
         - 02list.qmd
         - 03dictionary.qmd
         - control_structure.qmd
@@ -30,8 +31,11 @@ bibliography: references.bib
 
 execute:
   cache: true
+  error: true
+  message: FALSE
   warning: false
 toc: true
+toc-expand: true
 toc-depth: 4
 toc-location: right
 number-sections: true

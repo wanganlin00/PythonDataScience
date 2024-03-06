@@ -9,7 +9,8 @@ code-fold: show
 code-link: true
 code-tools: true
 ---
-# R-Python {unnumbered}
+
+# R-Python {.unnumbered}
 
 ## [reticulate 包](https://rstudio.github.io/reticulate/index.html){.uri}
 
@@ -90,7 +91,7 @@ py$n
 ## **Python 与 R 对象相互转换**
 
 | R                      | Python            | 例                                               |
-|------------------|-----------------|-------------------------------------|
+|------------------|------------------|------------------------------------|
 | 单元素向量             | 标量Scalar        | `1`、 `1L`、`TRUE`、`"foo"`                      |
 | 未命名列表或多元素向量 | List              | `c(1.0, 2.0, 3.0)`, `c(1L, 2L, 3L)`              |
 | 命名列表               | Dict              | `list(a = 1L, b = 2.0)`, `dict(x = x_data)`      |

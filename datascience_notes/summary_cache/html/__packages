@@ -1,5 +1,3 @@
-base
-methods
 readxl
 writexl
 tidyverse
@@ -15,8 +13,3 @@ lubridate
 patchwork
 BiocManager
 conflicted
-datasets
-utils
-grDevices
-graphics
-stats

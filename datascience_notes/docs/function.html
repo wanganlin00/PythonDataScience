@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01basics.html">Python</a></li><li class="breadcrumb-item"><a href="./function.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">函数</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./preface.html">Python</a></li><li class="breadcrumb-item"><a href="./function.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">函数</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">R &lt;-&gt; Python</span></a>
+ <span class="menu-text">R&lt;-&gt;Python</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -182,8 +182,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Basics</span></span></a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01basic_data_type.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">基本数据类型</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -223,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li>
@@ -270,7 +276,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">10.1</span> 定义函数</h2>
 <section id="传参" class="level3" data-number="10.1.1"><h3 data-number="10.1.1" class="anchored" data-anchor-id="传参">
 <span class="header-section-number">10.1.1</span> 传参</h3>
-<div class="cell" data-hash="function_cache/html/unnamed-chunk-1_a0bf6eeffc94f5ef747444bddd1d1b8b">
+<div class="cell" data-hash="function_cache/html/unnamed-chunk-1_b61cee58ce4a4072b9184c318ffa5b54">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet_user(username):</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""文档字符串（docstring）"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Hello,</span><span class="sc">{</span>username<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -289,7 +295,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="返回字典" class="level3" data-number="10.2.1"><h3 data-number="10.2.1" class="anchored" data-anchor-id="返回字典">
 <span class="header-section-number">10.2.1</span> 返回字典</h3>
 <p>实参可选</p>
-<div class="cell" data-hash="function_cache/html/unnamed-chunk-2_c846ba7fd9e7cbe33584d2f5b39e0fab">
+<div class="cell" data-hash="function_cache/html/unnamed-chunk-2_2c18c5b6555634f55ed934e736ea1a66">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_formatted_name(first_name, last_name, middle_name<span class="op">=</span><span class="st">''</span>):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""返回标准格式的姓名"""</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> middle_name: </span>
@@ -306,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; John Lee Hooker</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-hash="function_cache/html/unnamed-chunk-3_b77450609cfd7c20816dd9590b92a231">
+<div class="cell" data-hash="function_cache/html/unnamed-chunk-3_1ffcec8e960e6066486c0b6f2b8c80d7">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_person(first_name,last_name,age<span class="op">=</span><span class="va">None</span>):</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" 返回字典，其中包含姓名或年龄"""</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    person <span class="op">=</span> {<span class="st">"first"</span>: first_name,<span class="st">"last"</span>:last_name}</span>
@@ -321,7 +327,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section></section><section id="传递列表" class="level2" data-number="10.3"><h2 data-number="10.3" class="anchored" data-anchor-id="传递列表">
 <span class="header-section-number">10.3</span> 传递列表</h2>
-<div class="cell" data-hash="function_cache/html/unnamed-chunk-4_336cd1aecaf649ca29624eec23c4f622">
+<div class="cell" data-hash="function_cache/html/unnamed-chunk-4_00dd4cb60dfd77a2e82c8e742d5198ed">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 函数</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_models(unprinted_designs, completed_models): </span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="co">""" 模拟打印每个设计，直到没有未打印的设计为止</span></span>
@@ -380,7 +386,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="传递任意数量的实参" class="level2" data-number="10.4"><h2 data-number="10.4" class="anchored" data-anchor-id="传递任意数量的实参">
 <span class="header-section-number">10.4</span> 传递任意数量的实参</h2>
-<div class="cell" data-hash="function_cache/html/unnamed-chunk-5_d1cde976e92f835dbd2f596f85c6ca61">
+<div class="cell" data-hash="function_cache/html/unnamed-chunk-5_b403a9deca84b27f98e1b66fc70629a9">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> make_pizza(<span class="op">*</span>toppings):</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""打印顾客点的所有配料"""</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(toppings)</span>
@@ -391,7 +397,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <p>Python先匹配位置实参和关键字实参，再将剩余的实参匹配到最后一个形参。<code>*toppings</code> 中的星号 <code>*</code> 创建一个名为 <code>toppings</code> 的元组。</p>
 <p><code>**user_info</code>中的两个星号 <code>**</code> 创建一个名为<code>user_info</code>的字典，接收任意数量的关键字实参</p>
-<div class="cell" data-hash="function_cache/html/unnamed-chunk-6_9fde513e9d545ee685ca4eaa6be52ac0">
+<div class="cell" data-hash="function_cache/html/unnamed-chunk-6_c3810a16b2ae579a08cd016d2f058205">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> build_profile(first, last, <span class="op">**</span>user_info):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""创建一个字典，其中包含我们知道的有关用户的一切"""</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    user_info[<span class="st">'first_name'</span>] <span class="op">=</span> first </span>

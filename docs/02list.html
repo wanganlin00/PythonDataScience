@@ -61,7 +61,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./03dictionary.html" rel="next">
-<link href="./01basics.html" rel="prev">
+<link href="./01basic_data_type.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -98,7 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01basics.html">Python</a></li><li class="breadcrumb-item"><a href="./02list.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">列表list</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./preface.html">Python</a></li><li class="breadcrumb-item"><a href="./02list.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">列表list</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">R &lt;-&gt; Python</span></a>
+ <span class="menu-text">R&lt;-&gt;Python</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -182,8 +182,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Basics</span></span></a>
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">前言</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01basic_data_type.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">基本数据类型</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -223,7 +229,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav><div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">Table of contents</h2>
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99"><h2 id="toc-title">Table of contents</h2>
    
   <ul>
 <li><a href="#%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0" id="toc-访问元素" class="nav-link active" data-scroll-target="#%E8%AE%BF%E9%97%AE%E5%85%83%E7%B4%A0"><span class="header-section-number">7.1</span> 访问元素</a></li>
@@ -267,7 +273,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 </header><p>在Python中，用方括号<code>[]</code> 表示列表，用逗号分隔其中的元素。</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-1_b25cbe292968a1480774e3583db4a636">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-1_ffdecb10522b69cf707488bfae67a50d">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Country <span class="op">=</span> [<span class="st">"China"</span>,<span class="st">'USA'</span>,<span class="st">"UK"</span>,<span class="st">"France"</span>,<span class="st">"German"</span>,<span class="st">"Japan"</span>]</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Country)</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; ['China', 'USA', 'UK', 'France', 'German', 'Japan']</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -276,7 +282,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="访问元素" class="level2" data-number="7.1"><h2 data-number="7.1" class="anchored" data-anchor-id="访问元素">
 <span class="header-section-number">7.1</span> 访问元素</h2>
 <p>索引从0开始，而不是从1开始。</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-2_eeb61215baee2c478798d535d5ac8857">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-2_d6a1d780d6e5c7045760acff10dfc473">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Country[<span class="dv">0</span>])</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; China</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Country[<span class="dv">4</span>])</span>
@@ -284,7 +290,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>也可以从倒数第一个数向前访问</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-3_69d5047effcfcff72f829b9aedc1e9e0">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-3_dfceb742a1cd59514bc8a836e0dedf99">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Country[<span class="op">-</span><span class="dv">1</span>])</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; Japan</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Country[<span class="op">-</span><span class="dv">2</span>])</span>
@@ -294,7 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>使用列表中的值</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-4_11573d3edacca701804e28ef5b308b9f">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-4_4b224699353148ccfdcfeedcfeccf57c">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>intro <span class="op">=</span> <span class="ss">f"Hello,I'm from </span><span class="sc">{</span>Country[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">!"</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(intro)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; Hello,I'm from China!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -304,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">7.2</span> 修改、添加和删除元素</h2>
 <section id="修改元素" class="level3" data-number="7.2.1"><h3 data-number="7.2.1" class="anchored" data-anchor-id="修改元素">
 <span class="header-section-number">7.2.1</span> 修改元素</h3>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-5_f8f08ef6a6d7742c4c9af8ab91c090ff">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-5_6d6917fde44b85d724e79efa2ea30c09">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span>
@@ -320,7 +326,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <p><strong>在列表末尾添加元素</strong></p>
 <p>追加（<code><a href="https://rdrr.io/r/base/append.html">append()</a></code>）到列表末尾</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-6_01fdb5547d0e701f1d08791ca42b4cea">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-6_8faa380a6c556f9d5ba1473d7d10b374">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span>
@@ -331,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>可以先创建空列表，再用<code>append</code>逐个添加元素。</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-7_0c1f0df74fca890a67f8840a9b60df76">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-7_29338f2888113f5bcee6b19aa48be6ea">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fruit <span class="op">=</span> []</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>fruit.append(<span class="st">"apple"</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>fruit.append(<span class="st">"pear"</span>)</span>
@@ -344,7 +350,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <p><strong>在列表中插入元素</strong></p>
 <p>使用<code>insert()</code>方法可在列表的任意位置添加元素</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-8_5c3b6af8ecb76ae5819ce9a305267c80">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-8_f22be3be5cd65cc0f71fc3e5de59e242">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(num)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; [1, 2, 3, 4, 5, 6, 7, 8, 9]</span></span>
@@ -359,7 +365,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>
 <p>使用del 语句删除元素</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-9_7596dcd0e996f9b646131f716aa9c8cb">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-9_09a42b41869499ac627be48f0e947884">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> num[<span class="dv">0</span>]</span>
@@ -372,7 +378,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <p>使用pop()方法删除元素</p>
 <p>弹出<code>pop()</code> 方法删除列表末尾的元素</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-10_c2981e992226a3597cd6c6dbdb85e2b6">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-10_cbfec18383461e7af213e455c9e73322">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>popped_num <span class="op">=</span> num.pop()</span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>num</span>
@@ -385,7 +391,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>
 <p>删除任意位置的元素</p>
 <p>也可以使用<code>pop()</code>方法删除列表中任意位置的元素，指定索引即可</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-11_8fc181ab642f8f34e07867c6f75f84c7">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-11_b984914e78980ac85af1d9676b0a2dcb">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>fifth_num <span class="op">=</span> num.pop(<span class="dv">4</span>)</span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>num</span>
@@ -395,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li>
 <p>根据值删除元素</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-12_129a97afcb97efbbd2a219940b4dce87">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-12_233e7f193359ab6ed3f891a8c0bfac5f">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>num <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">9</span>]</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>hate_num <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>num.remove(hate_num)</span>
@@ -409,7 +415,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ol type="1">
 <li>
 <p>使用<code><a href="https://rdrr.io/r/base/sort.html">sort()</a></code>方法永久排序</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-13_a7c9657991285cd8c60c4600f31d33af">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-13_d8ee54214873024da5405d39e34d3836">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">### 字母顺序</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>letters <span class="op">=</span> [<span class="st">"a"</span>,<span class="st">"r"</span>,<span class="st">"k"</span>,<span class="st">"n"</span>,<span class="st">"v"</span>,<span class="st">"z"</span>]</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>letters.sort()</span>
@@ -426,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li>
 <p>使用<code>sorted()</code>函数临时排序</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-14_87cbd9819327f13a86f098ce1018de26">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-14_4d7648e933c289eb3066ada9303276a5">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>letters <span class="op">=</span> [<span class="st">"a"</span>,<span class="st">"r"</span>,<span class="st">"k"</span>,<span class="st">"n"</span>,<span class="st">"v"</span>,<span class="st">"z"</span>]</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">sorted</span>(letters)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; ['a', 'k', 'n', 'r', 'v', 'z']</span></span>
@@ -439,7 +445,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li>
 <p>使用<code>reverse()</code>方法反向打印列表</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-15_a3dd5dbeb553f1c39e9e3330f92ef03b">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-15_db1333e306f3c2c655653868183d3e65">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>letters <span class="op">=</span> [<span class="st">"a"</span>,<span class="st">"r"</span>,<span class="st">"k"</span>,<span class="st">"n"</span>,<span class="st">"v"</span>,<span class="st">"z"</span>]</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>letters.reverse()</span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(letters) <span class="co">#反向打印</span></span>
@@ -452,7 +458,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li>
 <p>使用<code>len()</code>函数确定列表长度</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-16_9aa5b120cd9d8d0e7f9a716b7861374e">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-16_cff51d2ad1bcf882e49f2f382fe30262">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>letters <span class="op">=</span> [<span class="st">"a"</span>,<span class="st">"r"</span>,<span class="st">"k"</span>,<span class="st">"n"</span>,<span class="st">"v"</span>,<span class="st">"z"</span>]</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="bu">len</span>(letters)</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; 6</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -463,7 +469,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">7.4</span> 遍历整个列表</h2>
 <p><code>for</code>循环</p>
 <p>注意避免缩进错误，如忘记缩进、忘记缩进额外的代码行、不必要的缩进、循环后不必要的缩进、遗漏冒号、</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-17_0996eba7bfc73c309d7a79d9846da0d1">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-17_5187f022b919506a512e9c67bea34b2d">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>subjects <span class="op">=</span> [<span class="st">"Chinese"</span>,<span class="st">"Mathematics"</span>,<span class="st">"English"</span>,<span class="st">"Physics"</span>,<span class="st">"Chemistry"</span>,<span class="st">"Biology"</span>]</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> subject <span class="kw">in</span> subjects:</span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>subject<span class="sc">}</span><span class="ss">:"</span>)</span>
@@ -493,7 +499,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">7.5</span> 创建数值列表</h2>
 <section id="使用range函数创建列表" class="level3" data-number="7.5.1"><h3 data-number="7.5.1" class="anchored" data-anchor-id="使用range函数创建列表">
 <span class="header-section-number">7.5.1</span> 使用<code>range()</code>函数创建列表</h3>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-18_00e2b513b3988e6d0706903bbc13f79b">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-18_c92f893e08aba56a74aa646692efe086">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> value <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">3</span>,<span class="dv">3</span>):</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="bu">print</span>(value)</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; -3</span></span>
@@ -504,7 +510,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-19_c38bc1f68d5a73fa6a00eaecce9f2c57">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-19_e8969eddf58bedc93ac163de801d70a7">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="op">-</span><span class="dv">5</span>,<span class="dv">5</span>,<span class="dv">2</span>))</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>numbers</span>
@@ -521,7 +527,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="统计函数" class="level3" data-number="7.5.2"><h3 data-number="7.5.2" class="anchored" data-anchor-id="统计函数">
 <span class="header-section-number">7.5.2</span> 统计函数</h3>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-20_1f6af5549a72c86b90cb95d59a37d6c1">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-20_60d46e2675402912b63ecfbe394bce5f">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>digits <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>,<span class="dv">10</span>))</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="bu">min</span>(digits)</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; 0</span></span>
@@ -533,7 +539,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section><section id="列表推导式list-comprehension" class="level3" data-number="7.5.3"><h3 data-number="7.5.3" class="anchored" data-anchor-id="列表推导式list-comprehension">
 <span class="header-section-number">7.5.3</span> 列表推导式list comprehension</h3>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-21_adb97bf93acaeb2aab430457d1c43315">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-21_1dbc1ad50e95c911904f3fcf94b877fb">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>squares <span class="op">=</span> [i<span class="op">**</span><span class="dv">2</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>,<span class="dv">10</span>)]</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>squares</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; [1, 4, 9, 16, 25, 36, 49, 64, 81]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -542,7 +548,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section></section><section id="slice" class="level2" data-number="7.6"><h2 data-number="7.6" class="anchored" data-anchor-id="slice">
 <span class="header-section-number">7.6</span> slice</h2>
 <p>列表的部分称为<strong>slice</strong>。</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-22_f84965ce659ab7899eaf0ad6e0fbbede">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-22_568b4912a612a2ee6b9e9ed74c0e01d6">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>letters <span class="op">=</span> [<span class="st">"a"</span>,<span class="st">"r"</span>,<span class="st">"k"</span>,<span class="st">"n"</span>,<span class="st">"v"</span>,<span class="st">"z"</span>]</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 左包含，右不包含</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>letters[<span class="dv">0</span>:<span class="dv">3</span>] </span>
@@ -604,7 +610,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="元组tuple" class="level2" data-number="7.7"><h2 data-number="7.7" class="anchored" data-anchor-id="元组tuple">
 <span class="header-section-number">7.7</span> 元组tuple</h2>
 <p>Python将不能修改的值称为<strong>不可变的</strong>。而不可变的列表称为<strong>元组（tuple）</strong>。元组使用圆括号<code>()</code>+逗号<code>,</code>标识。严格地说，元组是用逗号标识的，圆括号只是让元组看起来更整洁、更清晰，并不是必须的。</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-23_56ce253726a59e89884c89097135cfc0">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-23_fd99d06391b698b5003a496d206fc686">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>dimensions <span class="op">=</span> (<span class="dv">200</span>,<span class="dv">50</span>,<span class="dv">4</span>)</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>dimensions</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; (200, 50, 4)</span></span>
@@ -615,7 +621,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </details>
 </div>
 <p>虽然元组的元素不能修改，但可以重新给表示元组的变量赋值</p>
-<div class="cell" data-hash="02list_cache/html/unnamed-chunk-24_87efb919714044baa4682feb672a8751">
+<div class="cell" data-hash="02list_cache/html/unnamed-chunk-24_63017366e0ac6911487ae2e415f6f405">
 <details open=""><summary>Code</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>dimensions <span class="op">=</span> (<span class="dv">200</span>,<span class="dv">50</span>,<span class="dv">4</span>)</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>dimensions</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; (200, 50, 4)</span></span>
@@ -918,8 +924,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./01basics.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Basics</span></span>
+      <a href="./01basic_data_type.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">基本数据类型</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

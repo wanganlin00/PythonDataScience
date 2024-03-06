@@ -1,0 +1,99 @@
+---
+knitr: 
+  opts_chunk: 
+    comment: "#>>>"
+    collapse: TRUE
+number-sections: true
+code-fold: show
+code-link: true
+code-tools: true
+---
+
+# 前言 {.unnumbered}
+
+在文中使用的集成开发环境（IDE）是Rstudio，`code` 表示代码（code）。
+
+-   eval = FALSE：只显示代码，不运行代码
+
+-   echo = FALSE：不显示代码，只显示运行结果
+
+-   include = FALSE：运行代码，不显示代码和运行结果
+
+-   tidy = TRUE：整洁代码格式
+
+-   message = FALSE：不输出提示信息，比如包的载入信息
+
+-   warning = FALSE：不输出警告
+
+-   error = TRUE：忽略错误，继续编译文档
+
+-   collapse = TRUE：代码块结果放在一个文本块
+
+-   cache = TRUE：缓存运行结果，能加速后续再编译
+
+R代码块中， `#>` 表示运行R代码输出的结果，如
+
+```{r}
+#| comment: "#>"
+print("R")
+```
+
+Python代码块中， `#>>>` 表示运行Python代码输出的结果，如
+
+```{python}
+print("Python")
+```
+
+## **在 R**studio **Console 中交互式运行 Python**
+
+-   `reticulate::repl_python ()` 进入 Python 环境
+
+-   `exit / quit` 退出 Python 环境
+
+```{r}
+#| comment: "#>"
+#| eval: false
+library(reticulate)
+py_config()
+
+reticulate::repl_python()
+```
+
+## Python包管理工具
+
+Python package index（pypi） 是一个Python编程语言的软件库。
+
+**命令框 cmd**
+
+![](pip-command-options.jpg){fig-align="center"}
+
++--------------------------------------------------------------------+--------------------------+
+| pip \<command\> \[options\]                                        |                          |
++====================================================================+==========================+
+| pip install \<module\>                                             | install packages         |
+|                                                                    |                          |
+| pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/\<module\> |                          |
++--------------------------------------------------------------------+--------------------------+
+| pip uninstall \<module\>                                           |                          |
++--------------------------------------------------------------------+--------------------------+
+| pip list                                                           |                          |
++--------------------------------------------------------------------+--------------------------+
+| pip \--version                                                     | Show version and exit    |
+|                                                                    |                          |
+| pip -V                                                             |                          |
++--------------------------------------------------------------------+--------------------------+
+| python -m pip install \--upgrade pip                               | install and uptate pip   |
++--------------------------------------------------------------------+--------------------------+
+| pip install virtualenv                                             | 安装虚拟环境             |
++--------------------------------------------------------------------+--------------------------+
+| python -m venv venv                                                | 在项目目录中创建虚拟环境 |
++--------------------------------------------------------------------+--------------------------+
+| Windows: venv\Scripts\activate                                     | 激活虚拟环境             |
++--------------------------------------------------------------------+--------------------------+
+
+## 环境
+
+```{r}
+#| comment: "#>"
+sessioninfo::session_info()
+```

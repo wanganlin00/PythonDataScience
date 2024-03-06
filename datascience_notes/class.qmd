@@ -11,15 +11,14 @@ code-tools: true
 
 # 类class
 
-面向对象编程（object-oriented programming，OOP）：编写表示现实世界中的事物和情景的**类（class）并**基于这些类创建**对象（object）。**在编写类时，你要定义一系列类的对象都具备的通用行为。
-
-根据类创建对象称为**实例化**，**实例（instance）**
-
-类中的函数称为**方法**，`_init_(self,...)` 是一个特殊方法，其中`self` 形参指向实例，必不可少且必须位于首位。其他形参是基于类创建的实例的初始化属性。可通过实例访问的变量称为**属性（attribute）**。
+面向对象编程（object-oriented programming，OOP）：编写表示现实世界中的事物和情景的**类（class）并**基于这些类创建**对象（object）。**在编写类时，你要定义所有对象都具备的通用行为。根据类创建对象称为**实例化**，**实例（instance）**
 
 ## 定义类和方法
 
+类中的函数称为**方法**，`_init_(self,...)` 是一个特殊方法，其中`self` 形参指向实例，必不可少且必须位于首位。其他形参是基于类创建的实例的初始化属性。可通过实例访问的变量称为**属性（attribute）**。
+
 ```{python}
+# 定义类
 class Car:
     """表示汽车的类，存储有关汽车的信息 """
     def __init__(self, make, model, year): 
@@ -37,15 +36,18 @@ class Car:
         print(f"This car has {self.odometer_reading} miles on it.")
     def update_odometer(self,mileage):
         """更新里程数
-           禁止回调
-        """
+           禁止回调        """
         if mileage >= self.odometer_reading:
             self.odometer_reading = mileage
         else:
             print("错误！禁止回调！！！")
-
+            
+# 创建对象
 my_new_car = Car('audi', 'a4', 2024)
 
+```
+
+```{python}
 # 访问属性
 my_new_car.make
 my_new_car.odometer_reading
@@ -58,7 +60,7 @@ my_new_car.read_odometer()
 ### 修改属性的值
 
 ```{python}
-# 直接修改属性的值
+# 通过属性修改
 my_new_car.odometer_reading = 55
 my_new_car.odometer_reading
 

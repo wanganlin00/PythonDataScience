@@ -83,7 +83,7 @@ alien_0["speed"]
 #>>> KeyError: 'speed'
 ```
 
-get()方法第一个参数用于指定键key，第二个参数为指定键不存在时的返回值。
+get()方法第一个参数用于指定键key，第二个参数为指定的键不存在时的返回值。
 
 ```{python}
 alien_0 = {"color":"green","points":5}
@@ -169,6 +169,8 @@ for lan in like_language.values():
 for lan in set(like_language.values()):
     lan.title()
 ```
+
+# 集合set
 
 ::: callout-note
 集合的性质：互异性，无序性，确定性。
