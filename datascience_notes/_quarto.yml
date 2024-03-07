@@ -25,7 +25,9 @@ book:
         - control_structure.qmd
         - function.qmd
         - class.qmd
-
+    
+  repo-url: https://github.com/Wanganlin00/DataScience/
+  repo-actions: [edit,issue]
 
 bibliography: references.bib
 
