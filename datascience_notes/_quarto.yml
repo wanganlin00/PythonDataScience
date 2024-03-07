@@ -58,6 +58,8 @@ format:
     code-tools: true
     code-link: true
     html-math-method: katex
+#  pdf: 
+#    documentclass: scrreprt
     
 
 editor: visual
