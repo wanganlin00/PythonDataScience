@@ -5,7 +5,8 @@ project:
 book:
   title: "Data Science_notes"
   author: "王安林"
-  # date: "2024/2/29"
+  reader-mode: true
+  date: "2024/2/29"
   chapters:
     - index.qmd
     - intro.qmd
