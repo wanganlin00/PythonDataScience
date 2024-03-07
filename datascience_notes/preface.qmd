@@ -15,14 +15,14 @@ code-tools: true
 
 R代码块中， `#>` 表示运行R代码输出的结果，如
 
-```{r}
+```{r r-code}
 #| comment: "#>"
 print("R")
 ```
 
 Python代码块中， `#>>>` 表示运行Python代码输出的结果，如
 
-```{python}
+```{python python-code}
 print("Python")
 ```
 
