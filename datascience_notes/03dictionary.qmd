@@ -134,7 +134,7 @@ for i in like_language:
 
 ### 
 
-# 默认遍历键
+## 默认遍历键
 
 for i in like_language: print(f"Key:{i.title()}")
 
@@ -170,7 +170,7 @@ for lan in set(like_language.values()):
     lan.title()
 ```
 
-# 集合set
+## 集合set
 
 ::: callout-note
 集合的性质：互异性，无序性，确定性。

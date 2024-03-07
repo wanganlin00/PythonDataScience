@@ -11,25 +11,7 @@ code-tools: true
 
 # 前言 {.unnumbered}
 
-在文中使用的集成开发环境（IDE）是Rstudio，`code` 表示代码（code）。
-
--   eval = FALSE：只显示代码，不运行代码
-
--   echo = FALSE：不显示代码，只显示运行结果
-
--   include = FALSE：运行代码，不显示代码和运行结果
-
--   tidy = TRUE：整洁代码格式
-
--   message = FALSE：不输出提示信息，比如包的载入信息
-
--   warning = FALSE：不输出警告
-
--   error = TRUE：忽略错误，继续编译文档
-
--   collapse = TRUE：代码块结果放在一个文本块
-
--   cache = TRUE：缓存运行结果，能加速后续再编译
+在文中使用的集成开发环境（IDE）是Rstudio，`code` 表示代码（code）
 
 R代码块中， `#>` 表示运行R代码输出的结果，如
 
@@ -65,10 +47,16 @@ Python package index（pypi） 是一个Python编程语言的软件库。
 
 **命令框 cmd**
 
+| ***jupyter notebook 命令***         |                      |
+|-------------------------------------|----------------------|
+| jupyter notebook                    | 运行jupyter notebook |
+| pip install jupyterlab-spellchecker | 拼写检查插件         |
+|                                     |                      |
+
 ![](pip-command-options.jpg){fig-align="center"}
 
 +--------------------------------------------------------------------+--------------------------+
-| pip \<command\> \[options\]                                        |                          |
+| ***pip \<command\> \[options\]***                                  |                          |
 +====================================================================+==========================+
 | pip install \<module\>                                             | install packages         |
 |                                                                    |                          |
