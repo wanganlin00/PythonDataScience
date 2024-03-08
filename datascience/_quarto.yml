@@ -1,0 +1,83 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Data Science_notes"
+  reader-mode: true
+  
+  page-footer:
+    left: |
+      笔记由安林建立。
+    right: |
+      This book was built with <a href="https://quarto.org/">Quarto</a>.
+  cover-image: cover.jpg
+  favicon: cover.jpg
+  
+  site-url: https://wanganlin00.github.io/DataScience/
+  repo-url: https://github.com/Wanganlin00/DataScience/
+  repo-branch: main
+  repo-actions: [edit,issue]
+  
+  chapters:
+    - index.qmd
+    - intro.qmd
+    
+    - part: "R"
+      chapters: 
+        - summary.qmd
+        - references.qmd
+        
+    - part: "R<->Python"
+      chapters: 
+        - R-Python.qmd
+        
+    - part: "Python"
+      chapters: 
+        - preface.qmd
+        - 01basic_data_type.qmd
+        - 02list.qmd
+        - 03dictionary.qmd
+        - control_structure.qmd
+        - function.qmd
+        - class.qmd
+    
+
+
+bibliography: references.bib
+
+execute:
+  cache: true
+  error: true
+  message: FALSE
+  warning: false
+toc: true
+toc-expand: true
+toc-depth: 4
+toc-location: right
+number-sections: true
+knitr:
+  opts_chunk: 
+    comment: "#>" 
+    collapse: TRUE
+crossref: 
+  fig-title: 图
+  fig-prefix: 图
+  
+fig-width: 6
+fig-asp: 0.618
+
+format: 
+  html: 
+    theme: cosmo
+    df-print: kable
+    code-fold: true
+    code-tools: true
+    code-link: true
+    html-math-method: katex
+#  pdf: 
+#    documentclass: scrreprt
+    
+
+editor: visual
+
