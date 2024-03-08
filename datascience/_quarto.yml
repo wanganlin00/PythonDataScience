@@ -3,7 +3,7 @@ project:
   output-dir: docs
 
 book:
-  title: "Data Science_notes"
+  title: "Data Science"
   reader-mode: true
   
   page-footer:
