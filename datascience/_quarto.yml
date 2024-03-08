@@ -11,8 +11,8 @@ book:
       笔记由安林建立。
     right: |
       This book was built with <a href="https://quarto.org/">Quarto</a>.
-  cover-image: cover.jpg
-  favicon: cover.jpg
+#  cover-image: cover.jpg
+#  favicon: cover.jpg
   
   site-url: https://wanganlin00.github.io/DataScience/
   repo-url: https://github.com/Wanganlin00/DataScience/
@@ -51,18 +51,23 @@ execute:
   error: true
   message: FALSE
   warning: false
+  
 toc: true
 toc-expand: true
 toc-depth: 4
 toc-location: right
 number-sections: true
+
 knitr:
   opts_chunk: 
     comment: "#>" 
     collapse: TRUE
+    
 crossref: 
   fig-title: 图
   fig-prefix: 图
+  tbl-title: 表
+  tbl-prefix: 表
   
 fig-width: 6
 fig-asp: 0.618
