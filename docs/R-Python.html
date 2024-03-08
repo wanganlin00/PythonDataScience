@@ -130,7 +130,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">index.html</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -286,7 +286,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="reticulate-包" class="level2" data-number="5.1"><h2 data-number="5.1" class="anchored" data-anchor-id="reticulate-包">
 <span class="header-section-number">5.1</span> <a href="https://rstudio.github.io/reticulate/index.html" class="uri">reticulate 包</a>
 </h2>
-<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-1_d4165d630b87b3cdf3e4c9fff17b7ef8">
+<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-1_61ff37c4735e048792b422f3efafa870">
 <details open=""><summary>Code</summary><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/reticulate/">reticulate</a></span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
@@ -294,57 +294,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="header-section-number">5.2</span> <strong>安装 python 模块</strong>
 </h2>
 <p><a href="https://rstudio.github.io/reticulate/articles/python_packages.html">安装Python module</a></p>
-<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-2_99a37fde74c7ff8f4d7583f84eb5fc2f">
+<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-2_bb6b8c9a61fba1dfe0e74da577ed0072">
 <details open=""><summary>Code</summary><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 默认从conda安装</span></span>
 <span></span>
 <span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/py_install.html">py_install</a></span><span class="op">(</span><span class="st">"seaborn"</span><span class="op">)</span></span>
-<span></span>
+<span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/py_available.html">py_available</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co"># 查看模块是否已安装</span></span>
 <span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/py_module_available.html">py_module_available</a></span><span class="op">(</span><span class="st">'seaborn'</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/py_module_available.html">py_module_available</a></span><span class="op">(</span><span class="st">'numpy'</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/py_module_available.html">py_module_available</a></span><span class="op">(</span><span class="st">'pandas'</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/py_module_available.html">py_module_available</a></span><span class="op">(</span><span class="st">'scanpy'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/py_module_available.html">py_module_available</a></span><span class="op">(</span><span class="st">'scanpy'</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rstudio.github.io/reticulate/reference/py_module_available.html">py_module_available</a></span><span class="op">(</span><span class="st">'pip'</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="调用-python-模块" class="level2" data-number="5.3"><h2 data-number="5.3" class="anchored" data-anchor-id="调用-python-模块">
 <span class="header-section-number">5.3</span> 调用 Python 模块</h2>
-<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-3_7b0bd4d28b68b78afef764b604acf41b">
+<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-3_c137d7ac92dead4f1f3c01decd7048fc">
 <details open=""><summary>Code</summary><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># 调用os模块(module)的listdir()函数</span></span>
 <span><span class="va">os</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rstudio.github.io/reticulate/reference/import.html">import</a></span><span class="op">(</span><span class="st">"os"</span><span class="op">)</span></span>
 <span><span class="va">os</span><span class="op">$</span><span class="fu">listdir</span><span class="op">(</span><span class="st">"./"</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt;  [1] ".Rproj.user"             "index.qmd"              </span></span>
-<span><span class="co">#&gt;&gt;&gt;  [3] "references.qmd"          "references.bib"         </span></span>
-<span><span class="co">#&gt;&gt;&gt;  [5] ".quarto"                 ".gitignore"             </span></span>
-<span><span class="co">#&gt;&gt;&gt;  [7] "_quarto.yml"             "cover.png"              </span></span>
-<span><span class="co">#&gt;&gt;&gt;  [9] "intro.qmd"               "summary.qmd"            </span></span>
-<span><span class="co">#&gt;&gt;&gt; [11] "datascience_notes.Rproj" "01basics.qmd"           </span></span>
-<span><span class="co">#&gt;&gt;&gt; [13] "02list.qmd"              "03dictionary.qmd"       </span></span>
-<span><span class="co">#&gt;&gt;&gt; [15] "control_structure.qmd"   "function.qmd"           </span></span>
-<span><span class="co">#&gt;&gt;&gt; [17] "R-Python.qmd"            "class.qmd"              </span></span>
-<span><span class="co">#&gt;&gt;&gt; [19] "pip-command-options.jpg" "R-Python_files"         </span></span>
-<span><span class="co">#&gt;&gt;&gt; [21] "index_cache"             "intro_cache"            </span></span>
-<span><span class="co">#&gt;&gt;&gt; [23] "summary_cache"           "R-Python_cache"         </span></span>
-<span><span class="co">#&gt;&gt;&gt; [25] "01basic_data_type"       "02list_cache"           </span></span>
-<span><span class="co">#&gt;&gt;&gt; [27] "03dictionary_cache"      "control_structure_cache"</span></span>
-<span><span class="co">#&gt;&gt;&gt; [29] "function_cache"          "class_cache"            </span></span>
-<span><span class="co">#&gt;&gt;&gt; [31] "01basic_data_type.qmd"   "preface.qmd"            </span></span>
-<span><span class="co">#&gt;&gt;&gt; [33] "docs"                    "index.html"             </span></span>
-<span><span class="co">#&gt;&gt;&gt; [35] "site_libs"               "intro.html"             </span></span>
-<span><span class="co">#&gt;&gt;&gt; [37] "summary.html"            "references.html"        </span></span>
-<span><span class="co">#&gt;&gt;&gt; [39] "R-Python.rmarkdown"</span></span>
+<span><span class="co">#&gt;  [1] "03dictionary_cache"      "class_cache"            </span></span>
+<span><span class="co">#&gt;  [3] "control_structure_cache" ".quarto"                </span></span>
+<span><span class="co">#&gt;  [5] "01basic_data_type"       "01basic_data_type_cache"</span></span>
+<span><span class="co">#&gt;  [7] "02list_cache"            "preface_cache"          </span></span>
+<span><span class="co">#&gt;  [9] "R-Python_cache"          "R-Python_files"         </span></span>
+<span><span class="co">#&gt; [11] "summary_cache"           "function_cache"         </span></span>
+<span><span class="co">#&gt; [13] "index_cache"             "intro_cache"            </span></span>
+<span><span class="co">#&gt; [15] "function.qmd"            "index.qmd"              </span></span>
+<span><span class="co">#&gt; [17] "intro.qmd"               "pip-command-options.jpg"</span></span>
+<span><span class="co">#&gt; [19] "preface.qmd"             "README.md"              </span></span>
+<span><span class="co">#&gt; [21] "references.bib"          "references.qmd"         </span></span>
+<span><span class="co">#&gt; [23] "R-Python.qmd"            "summary.qmd"            </span></span>
+<span><span class="co">#&gt; [25] "_quarto.yml"             "01basic_data_type.qmd"  </span></span>
+<span><span class="co">#&gt; [27] "02list.qmd"              "03dictionary.qmd"       </span></span>
+<span><span class="co">#&gt; [29] "class.qmd"               "control_structure.qmd"  </span></span>
+<span><span class="co">#&gt; [31] "cover.png"               "datascience_notes.Rproj"</span></span>
+<span><span class="co">#&gt; [33] ".gitignore"              ".Rproj.user"            </span></span>
+<span><span class="co">#&gt; [35] "docs"                    "index.html"             </span></span>
+<span><span class="co">#&gt; [37] "site_libs"               "intro.html"             </span></span>
+<span><span class="co">#&gt; [39] "summary.html"            "references.html"        </span></span>
+<span><span class="co">#&gt; [41] "R-Python.rmarkdown"</span></span>
 <span></span>
 <span><span class="co"># 调用seaborn模块的load_dataset()函数</span></span>
 <span><span class="co"># 需要seaborn模块已安装</span></span>
 <span><span class="va">sns</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rstudio.github.io/reticulate/reference/import.html">import</a></span><span class="op">(</span><span class="st">"seaborn"</span><span class="op">)</span></span>
 <span><span class="va">tips</span> <span class="op">&lt;-</span> <span class="va">sns</span><span class="op">$</span><span class="fu">load_dataset</span><span class="op">(</span><span class="st">"tips"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html">print</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">tips</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt;   total_bill  tip    sex smoker day   time size</span></span>
-<span><span class="co">#&gt;&gt;&gt; 1      16.99 1.01 Female     No Sun Dinner    2</span></span>
-<span><span class="co">#&gt;&gt;&gt; 2      10.34 1.66   Male     No Sun Dinner    3</span></span>
-<span><span class="co">#&gt;&gt;&gt; 3      21.01 3.50   Male     No Sun Dinner    3</span></span>
-<span><span class="co">#&gt;&gt;&gt; 4      23.68 3.31   Male     No Sun Dinner    2</span></span>
-<span><span class="co">#&gt;&gt;&gt; 5      24.59 3.61 Female     No Sun Dinner    4</span></span>
-<span><span class="co">#&gt;&gt;&gt; 6      25.29 4.71   Male     No Sun Dinner    4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co">#&gt;   total_bill  tip    sex smoker day   time size</span></span>
+<span><span class="co">#&gt; 1      16.99 1.01 Female     No Sun Dinner    2</span></span>
+<span><span class="co">#&gt; 2      10.34 1.66   Male     No Sun Dinner    3</span></span>
+<span><span class="co">#&gt; 3      21.01 3.50   Male     No Sun Dinner    3</span></span>
+<span><span class="co">#&gt; 4      23.68 3.31   Male     No Sun Dinner    2</span></span>
+<span><span class="co">#&gt; 5      24.59 3.61 Female     No Sun Dinner    4</span></span>
+<span><span class="co">#&gt; 6      25.29 4.71   Male     No Sun Dinner    4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section><section id="markdown中直接使用python" class="level2" data-number="5.4"><h2 data-number="5.4" class="anchored" data-anchor-id="markdown中直接使用python">
@@ -372,7 +374,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </h2>
 <section id="python调用r对象" class="level3" data-number="5.5.1"><h3 data-number="5.5.1" class="anchored" data-anchor-id="python调用r对象">
 <span class="header-section-number">5.5.1</span> Python调用R对象</h3>
-<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-5_caf3787d791e7a6e239c789a4e360522">
+<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-5_23c7d42ceb347e4162b04cf48622cb76">
 <details open=""><summary>Code</summary><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>, b <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">3</span>, <span class="fl">4</span><span class="op">)</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -394,30 +396,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> pd.DataFrame([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]], columns<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-8_57bd3a6768130026b3ab4915ae56864f">
+<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-8_9b99cf1d900e65c34c0a2ee5f8caddc9">
 <details open=""><summary>Code</summary><div class="sourceCode" id="cb8"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">py</span><span class="op">$</span><span class="va">m</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1 2 3</span></span>
-<span><span class="va">py</span><span class="op">$</span><span class="va">n</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details><div class="cell-output-display">
-<div class="kable-table">
-<table class="table table-sm table-striped small">
-<thead><tr class="header">
-<th style="text-align: right;">a</th>
-<th style="text-align: right;">b</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">4</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
+<span><span class="co">#&gt; module '__main__' has no attribute 'm'</span></span>
+<span><span class="va">py</span><span class="op">$</span><span class="va">n</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'n'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
 </div>
 </section></section><section id="python-与-r-对象相互转换" class="level2" data-number="5.6"><h2 data-number="5.6" class="anchored" data-anchor-id="python-与-r-对象相互转换">
 <span class="header-section-number">5.6</span> <strong>Python 与 R 对象相互转换</strong>
@@ -427,7 +411,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
-<col style="width: 50%">
+<col style="width: 49%">
 </colgroup>
 <thead><tr class="header">
 <th>R</th>
@@ -482,7 +466,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <section id="r-python-1" class="level3" data-number="5.6.1"><h3 data-number="5.6.1" class="anchored" data-anchor-id="r-python-1">
 <span class="header-section-number">5.6.1</span> <strong>R</strong> → Python</h3>
-<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-9_588333c6772d67e8d4d42f02e80c8648">
+<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-9_562aa7611fbf9dbd80dc70a10d68906f">
 <details open=""><summary>Code</summary><div class="sourceCode" id="cb9"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">A</span> <span class="op">&lt;-</span> <span class="fl">1</span></span>
 <span><span class="va">B</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">C</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>a <span class="op">=</span> <span class="fl">1</span>, b <span class="op">=</span> <span class="fl">2</span>, c <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
@@ -598,124 +582,66 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-12_597f5bfccb6483c3c68e0e50c8a2ec09">
+<div class="cell" data-hash="R-Python_cache/html/unnamed-chunk-12_1db8d64ddb23f844b9e715cea12bcd83">
 <details open=""><summary>Code</summary><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">### integer</span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">A</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'A'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">A</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "integer"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'A'</span></span>
 <span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">B</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1 2 3</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'B'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">B</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "integer"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'B'</span></span>
 <span></span>
 <span><span class="co">### list</span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">C</span></span>
-<span><span class="co">#&gt;&gt;&gt; [[1]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1 2</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[2]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 3 4</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'C'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">C</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "list"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'C'</span></span>
 <span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">D1</span></span>
-<span><span class="co">#&gt;&gt;&gt; [[1]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[2]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 2</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[3]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 3</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'D1'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">D1</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "list"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'D1'</span></span>
 <span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">D2</span></span>
-<span><span class="co">#&gt;&gt;&gt; [[1]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1 2</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[2]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 2</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[3]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 3</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'D2'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">D2</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "list"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'D2'</span></span>
 <span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">E</span></span>
-<span><span class="co">#&gt;&gt;&gt; [[1]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[2]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 2</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[3]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 3</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'E'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">E</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "list"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'E'</span></span>
 <span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">FF</span></span>
-<span><span class="co">#&gt;&gt;&gt; [[1]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [[1]][[1]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[1]][[2]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 2</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[2]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [[2]][[1]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 3</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[2]][[2]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 4</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'FF'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">FF</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "list"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'FF'</span></span>
 <span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">G</span></span>
-<span><span class="co">#&gt;&gt;&gt; [[1]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [[1]][[1]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[1]][[2]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 2</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[2]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 3</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; [[3]]</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 4</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'G'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">G</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "list"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'G'</span></span>
 <span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">H</span></span>
-<span><span class="co">#&gt;&gt;&gt; $a</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1 2 3</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; $b</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 2 3 4</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'H'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">H</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "list"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'H'</span></span>
 <span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">I</span></span>
-<span><span class="co">#&gt;&gt;&gt; $a</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 1</span></span>
-<span><span class="co">#&gt;&gt;&gt; </span></span>
-<span><span class="co">#&gt;&gt;&gt; $b</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 2 3 4</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'I'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">I</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "list"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'I'</span></span>
 <span></span>
 <span><span class="co">### function</span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="va">J</span></span>
-<span><span class="co">#&gt;&gt;&gt; &lt;function J at 0x000001EBF2004820&gt;</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'J'</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/class.html">class</a></span><span class="op">(</span><span class="va">py</span><span class="op">$</span><span class="va">J</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] "python.builtin.function" "python.builtin.object"</span></span>
+<span><span class="co">#&gt; module '__main__' has no attribute 'J'</span></span>
 <span><span class="va">py</span><span class="op">$</span><span class="fu">J</span><span class="op">(</span><span class="fl">2</span>, <span class="fl">3</span><span class="op">)</span></span>
-<span><span class="co">#&gt;&gt;&gt; [1] 5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span><span class="co">#&gt; module '__main__' has no attribute 'J'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 
@@ -1033,226 +959,241 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="fu">## [reticulate 包](https://rstudio.github.io/reticulate/index.html){.uri}</span></span>
 <span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
-<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## **安装 python 模块**</span></span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">安装Python module</span><span class="co">](https://rstudio.github.io/reticulate/articles/python_packages.html)</span></span>
-<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co"># 默认从conda安装</span></span>
-<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="fu">py_install</span>(<span class="st">"seaborn"</span>)</span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: "#&gt;"</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## **安装 python 模块**</span></span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">安装Python module</span><span class="co">](https://rstudio.github.io/reticulate/articles/python_packages.html)</span></span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: "#&gt;"</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a><span class="co"># 默认从conda安装</span></span>
 <span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看模块是否已安装</span></span>
-<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="fu">py_module_available</span>(<span class="st">'seaborn'</span>)</span>
-<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="fu">py_module_available</span>(<span class="st">'numpy'</span>)</span>
-<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="fu">py_module_available</span>(<span class="st">'pandas'</span>)</span>
-<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="fu">py_module_available</span>(<span class="st">'scanpy'</span>)</span>
-<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="fu">## 调用 Python 模块</span></span>
-<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a><span class="co"># 调用os模块(module)的listdir()函数</span></span>
-<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a>os <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"os"</span>)</span>
-<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a>os<span class="sc">$</span><span class="fu">listdir</span>(<span class="st">"./"</span>)</span>
-<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="co"># 调用seaborn模块的load_dataset()函数</span></span>
-<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a><span class="co"># 需要seaborn模块已安装</span></span>
-<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>sns <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"seaborn"</span>)</span>
-<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>tips <span class="ot">&lt;-</span> sns<span class="sc">$</span><span class="fu">load_dataset</span>(<span class="st">"tips"</span>)</span>
-<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(tips))</span>
-<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a><span class="fu">## markdown中直接使用Python</span></span>
-<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
-<span id="cb13-64"><a href="#cb13-64" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
-<span id="cb13-65"><a href="#cb13-65" aria-hidden="true" tabindex="-1"></a>tips.head()</span>
-<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, data<span class="op">=</span>tips, hue<span class="op">=</span><span class="st">"smoker"</span>)</span>
-<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas</span>
-<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## **markdown 中 Python 与 R 对象相互调用**</span></span>
-<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a><span class="fu">### Python调用R对象</span></span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a><span class="fu">py_install</span>(<span class="st">"seaborn"</span>)</span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a><span class="fu">py_available</span>()</span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="co"># 查看模块是否已安装</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a><span class="fu">py_module_available</span>(<span class="st">'seaborn'</span>)</span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a><span class="fu">py_module_available</span>(<span class="st">'numpy'</span>)</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a><span class="fu">py_module_available</span>(<span class="st">'pandas'</span>)</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a><span class="fu">py_module_available</span>(<span class="st">'scanpy'</span>)</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a><span class="fu">py_module_available</span>(<span class="st">'pip'</span>)</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="fu">## 调用 Python 模块</span></span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: "#&gt;"</span></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="co"># 调用os模块(module)的listdir()函数</span></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>os <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"os"</span>)</span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>os<span class="sc">$</span><span class="fu">listdir</span>(<span class="st">"./"</span>)</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a><span class="co"># 调用seaborn模块的load_dataset()函数</span></span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a><span class="co"># 需要seaborn模块已安装</span></span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a>sns <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"seaborn"</span>)</span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a>tips <span class="ot">&lt;-</span> sns<span class="sc">$</span><span class="fu">load_dataset</span>(<span class="st">"tips"</span>)</span>
+<span id="cb13-59"><a href="#cb13-59" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="fu">head</span>(tips))</span>
+<span id="cb13-60"><a href="#cb13-60" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-61"><a href="#cb13-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-62"><a href="#cb13-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## markdown中直接使用Python</span></span>
+<span id="cb13-63"><a href="#cb13-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-66"><a href="#cb13-66" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-67"><a href="#cb13-67" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb13-68"><a href="#cb13-68" aria-hidden="true" tabindex="-1"></a>tips <span class="op">=</span> sns.load_dataset(<span class="st">"tips"</span>)</span>
+<span id="cb13-69"><a href="#cb13-69" aria-hidden="true" tabindex="-1"></a>tips.head()</span>
+<span id="cb13-70"><a href="#cb13-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-71"><a href="#cb13-71" aria-hidden="true" tabindex="-1"></a>sns.scatterplot(x<span class="op">=</span><span class="st">"total_bill"</span>, y<span class="op">=</span><span class="st">"tip"</span>, data<span class="op">=</span>tips, hue<span class="op">=</span><span class="st">"smoker"</span>)</span>
+<span id="cb13-72"><a href="#cb13-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-73"><a href="#cb13-73" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas</span>
+<span id="cb13-74"><a href="#cb13-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-75"><a href="#cb13-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb13-80"><a href="#cb13-80" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">b =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb13-81"><a href="#cb13-81" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a>r.x</span>
-<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a>r.y</span>
-<span id="cb13-88"><a href="#cb13-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-89"><a href="#cb13-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a><span class="fu">### R调用Python对象</span></span>
-<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb13-97"><a href="#cb13-97" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> pd.DataFrame([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]], columns<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>])</span>
-<span id="cb13-98"><a href="#cb13-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>m</span>
-<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>n</span>
-<span id="cb13-105"><a href="#cb13-105" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-106"><a href="#cb13-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Python 与 R 对象相互转换**</span></span>
-<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a>| R                      | Python            | 例                                               |</span>
-<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a>|------------------|------------------|------------------------------------|</span>
-<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a>| 单元素向量             | 标量Scalar        | <span class="in">`1`</span>、&nbsp;<span class="in">`1L`</span>、<span class="in">`TRUE`</span>、<span class="in">`"foo"`</span>                      |</span>
-<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a>| 未命名列表或多元素向量 | List              | <span class="in">`c(1.0, 2.0, 3.0)`</span>,&nbsp;<span class="in">`c(1L, 2L, 3L)`</span>              |</span>
-<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a>| 命名列表               | Dict              | <span class="in">`list(a = 1L, b = 2.0)`</span>,&nbsp;<span class="in">`dict(x = x_data)`</span>      |</span>
-<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a>| Matrix/Array           | NumPy ndarray     | <span class="in">`matrix(c(1,2,3,4), nrow = 2, ncol = 2)`</span>         |</span>
-<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a>| Data Frame             | Pandas DataFrame  | <span class="in">`data.frame(x = c(1,2,3), y = c("a", "b", "c"))`</span> |</span>
-<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a>| Function               | Python function   | <span class="in">`function(x) x + 1`</span>                              |</span>
-<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a>| NULL, TRUE, FALSE      | None, True, False | <span class="in">`NULL`</span>, <span class="in">`TRUE`</span>, <span class="in">`ALSE`</span>                           |</span>
-<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a>: Type conversions</span>
-<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a><span class="fu">### **R** → Python</span></span>
-<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>)</span>
-<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
-<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a>E <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">b =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a>G <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">b =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a>J <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
-<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
-<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a>K1 <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a>K2 <span class="ot">&lt;-</span> T</span>
-<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a>K3 <span class="ot">&lt;-</span> F</span>
-<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a><span class="co">### float</span></span>
-<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a>r.A</span>
-<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.A)</span>
+<span id="cb13-76"><a href="#cb13-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## **markdown 中 Python 与 R 对象相互调用**</span></span>
+<span id="cb13-77"><a href="#cb13-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-78"><a href="#cb13-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### Python调用R对象</span></span>
+<span id="cb13-79"><a href="#cb13-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-82"><a href="#cb13-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-83"><a href="#cb13-83" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: "#&gt;"</span></span>
+<span id="cb13-84"><a href="#cb13-84" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb13-85"><a href="#cb13-85" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">b =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb13-86"><a href="#cb13-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-87"><a href="#cb13-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-90"><a href="#cb13-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-91"><a href="#cb13-91" aria-hidden="true" tabindex="-1"></a>r.x</span>
+<span id="cb13-92"><a href="#cb13-92" aria-hidden="true" tabindex="-1"></a>r.y</span>
+<span id="cb13-93"><a href="#cb13-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-94"><a href="#cb13-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-95"><a href="#cb13-95" aria-hidden="true" tabindex="-1"></a><span class="fu">### R调用Python对象</span></span>
+<span id="cb13-96"><a href="#cb13-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-99"><a href="#cb13-99" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-100"><a href="#cb13-100" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb13-101"><a href="#cb13-101" aria-hidden="true" tabindex="-1"></a>m <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb13-102"><a href="#cb13-102" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> pd.DataFrame([[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]], columns<span class="op">=</span>[<span class="st">"a"</span>, <span class="st">"b"</span>])</span>
+<span id="cb13-103"><a href="#cb13-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-104"><a href="#cb13-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-107"><a href="#cb13-107" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-108"><a href="#cb13-108" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: "#&gt;"</span></span>
+<span id="cb13-109"><a href="#cb13-109" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>m</span>
+<span id="cb13-110"><a href="#cb13-110" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>n</span>
+<span id="cb13-111"><a href="#cb13-111" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-112"><a href="#cb13-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-113"><a href="#cb13-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Python 与 R 对象相互转换**</span></span>
+<span id="cb13-114"><a href="#cb13-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-115"><a href="#cb13-115" aria-hidden="true" tabindex="-1"></a>| R                      | Python            | 例                                               |</span>
+<span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a>|------------------|------------------|-----------------------------------|</span>
+<span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a>| 单元素向量             | 标量Scalar        | <span class="in">`1`</span>、&nbsp;<span class="in">`1L`</span>、<span class="in">`TRUE`</span>、<span class="in">`"foo"`</span>                      |</span>
+<span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a>| 未命名列表或多元素向量 | List              | <span class="in">`c(1.0, 2.0, 3.0)`</span>,&nbsp;<span class="in">`c(1L, 2L, 3L)`</span>              |</span>
+<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a>| 命名列表               | Dict              | <span class="in">`list(a = 1L, b = 2.0)`</span>,&nbsp;<span class="in">`dict(x = x_data)`</span>      |</span>
+<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a>| Matrix/Array           | NumPy ndarray     | <span class="in">`matrix(c(1,2,3,4), nrow = 2, ncol = 2)`</span>         |</span>
+<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a>| Data Frame             | Pandas DataFrame  | <span class="in">`data.frame(x = c(1,2,3), y = c("a", "b", "c"))`</span> |</span>
+<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>| Function               | Python function   | <span class="in">`function(x) x + 1`</span>                              |</span>
+<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a>| NULL, TRUE, FALSE      | None, True, False | <span class="in">`NULL`</span>, <span class="in">`TRUE`</span>, <span class="in">`ALSE`</span>                           |</span>
+<span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a>: Type conversions</span>
+<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### **R** → Python</span></span>
+<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: "#&gt;"</span></span>
+<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a>C <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">a =</span> <span class="dv">1</span>, <span class="at">b =</span> <span class="dv">2</span>, <span class="at">c =</span> <span class="dv">3</span>)</span>
+<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a>D <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>, <span class="at">nrow =</span> <span class="dv">2</span>)</span>
+<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a>E <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">a =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">b =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a>G <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a>H <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a>I <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">a =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>), <span class="at">b =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a>J <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
+<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a>K1 <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a>K2 <span class="ot">&lt;-</span> T</span>
+<span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a>K3 <span class="ot">&lt;-</span> F</span>
+<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a><span class="co">### list</span></span>
-<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a>r.B</span>
-<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.B)</span>
-<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a>r.C</span>
-<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.C)</span>
+<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a><span class="co">### float</span></span>
+<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a>r.A</span>
+<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.A)</span>
 <span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a><span class="co">### numpy.ndarray</span></span>
-<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a>r.D</span>
-<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.D)</span>
+<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a><span class="co">### list</span></span>
+<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a>r.B</span>
+<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.B)</span>
 <span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a><span class="co">### pandas.core.frame.DataFrame</span></span>
-<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a>r.E</span>
-<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.E)</span>
-<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a><span class="co">### list</span></span>
-<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a>r.G</span>
-<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.G)</span>
-<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a>r.H</span>
-<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.H)</span>
+<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a>r.C</span>
+<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.C)</span>
+<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a><span class="co">### numpy.ndarray</span></span>
+<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a>r.D</span>
+<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.D)</span>
+<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a><span class="co">### pandas.core.frame.DataFrame</span></span>
+<span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a>r.E</span>
+<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.E)</span>
 <span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a><span class="co">### dict</span></span>
-<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a>r.I</span>
-<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.I)</span>
+<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a><span class="co">### list</span></span>
+<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a>r.G</span>
+<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.G)</span>
 <span id="cb13-174"><a href="#cb13-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-175"><a href="#cb13-175" aria-hidden="true" tabindex="-1"></a><span class="co">### function</span></span>
-<span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a>r.J</span>
-<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.J)</span>
-<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a>r.J(<span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a><span class="co">### NoneType</span></span>
-<span id="cb13-182"><a href="#cb13-182" aria-hidden="true" tabindex="-1"></a>r.K1</span>
-<span id="cb13-183"><a href="#cb13-183" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.K1)</span>
-<span id="cb13-184"><a href="#cb13-184" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-186"><a href="#cb13-186" aria-hidden="true" tabindex="-1"></a><span class="co">### bool</span></span>
-<span id="cb13-187"><a href="#cb13-187" aria-hidden="true" tabindex="-1"></a>r.K2</span>
-<span id="cb13-188"><a href="#cb13-188" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.K2)</span>
-<span id="cb13-189"><a href="#cb13-189" aria-hidden="true" tabindex="-1"></a>r.K3</span>
-<span id="cb13-190"><a href="#cb13-190" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.K3)</span>
-<span id="cb13-191"><a href="#cb13-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-175"><a href="#cb13-175" aria-hidden="true" tabindex="-1"></a>r.H</span>
+<span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.H)</span>
+<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a><span class="co">### dict</span></span>
+<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a>r.I</span>
+<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.I)</span>
+<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-182"><a href="#cb13-182" aria-hidden="true" tabindex="-1"></a><span class="co">### function</span></span>
+<span id="cb13-183"><a href="#cb13-183" aria-hidden="true" tabindex="-1"></a>r.J</span>
+<span id="cb13-184"><a href="#cb13-184" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.J)</span>
+<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a>r.J(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb13-186"><a href="#cb13-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-187"><a href="#cb13-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-188"><a href="#cb13-188" aria-hidden="true" tabindex="-1"></a><span class="co">### NoneType</span></span>
+<span id="cb13-189"><a href="#cb13-189" aria-hidden="true" tabindex="-1"></a>r.K1</span>
+<span id="cb13-190"><a href="#cb13-190" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.K1)</span>
+<span id="cb13-191"><a href="#cb13-191" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-192"><a href="#cb13-192" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-193"><a href="#cb13-193" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Python** → R</span></span>
-<span id="cb13-194"><a href="#cb13-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-197"><a href="#cb13-197" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb13-198"><a href="#cb13-198" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="dv">1</span></span>
-<span id="cb13-199"><a href="#cb13-199" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb13-200"><a href="#cb13-200" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
-<span id="cb13-201"><a href="#cb13-201" aria-hidden="true" tabindex="-1"></a>D1 <span class="op">=</span> [[<span class="dv">1</span>], <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb13-202"><a href="#cb13-202" aria-hidden="true" tabindex="-1"></a>D2 <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], <span class="dv">2</span>, <span class="dv">3</span>]</span>
-<span id="cb13-203"><a href="#cb13-203" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-204"><a href="#cb13-204" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb13-205"><a href="#cb13-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a>FF <span class="op">=</span> ((<span class="dv">1</span>, <span class="dv">2</span>), (<span class="dv">3</span>, <span class="dv">4</span>))</span>
-<span id="cb13-207"><a href="#cb13-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-208"><a href="#cb13-208" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> ((<span class="dv">1</span>, <span class="dv">2</span>), <span class="dv">3</span>, <span class="dv">4</span>)</span>
-<span id="cb13-209"><a href="#cb13-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-210"><a href="#cb13-210" aria-hidden="true" tabindex="-1"></a>H <span class="op">=</span> {<span class="st">"a"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],  <span class="st">"b"</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]}</span>
-<span id="cb13-211"><a href="#cb13-211" aria-hidden="true" tabindex="-1"></a>     </span>
-<span id="cb13-212"><a href="#cb13-212" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>,<span class="st">"b"</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]}</span>
-<span id="cb13-213"><a href="#cb13-213" aria-hidden="true" tabindex="-1"></a>     </span>
-<span id="cb13-214"><a href="#cb13-214" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> J(a, b):</span>
-<span id="cb13-215"><a href="#cb13-215" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b</span>
-<span id="cb13-216"><a href="#cb13-216" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb13-217"><a href="#cb13-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-220"><a href="#cb13-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-221"><a href="#cb13-221" aria-hidden="true" tabindex="-1"></a><span class="do">### integer</span></span>
-<span id="cb13-222"><a href="#cb13-222" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>A</span>
-<span id="cb13-223"><a href="#cb13-223" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>A)</span>
+<span id="cb13-193"><a href="#cb13-193" aria-hidden="true" tabindex="-1"></a><span class="co">### bool</span></span>
+<span id="cb13-194"><a href="#cb13-194" aria-hidden="true" tabindex="-1"></a>r.K2</span>
+<span id="cb13-195"><a href="#cb13-195" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.K2)</span>
+<span id="cb13-196"><a href="#cb13-196" aria-hidden="true" tabindex="-1"></a>r.K3</span>
+<span id="cb13-197"><a href="#cb13-197" aria-hidden="true" tabindex="-1"></a><span class="bu">type</span>(r.K3)</span>
+<span id="cb13-198"><a href="#cb13-198" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-199"><a href="#cb13-199" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-200"><a href="#cb13-200" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Python** → R</span></span>
+<span id="cb13-201"><a href="#cb13-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-204"><a href="#cb13-204" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb13-205"><a href="#cb13-205" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb13-206"><a href="#cb13-206" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb13-207"><a href="#cb13-207" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], [<span class="dv">3</span>, <span class="dv">4</span>]]</span>
+<span id="cb13-208"><a href="#cb13-208" aria-hidden="true" tabindex="-1"></a>D1 <span class="op">=</span> [[<span class="dv">1</span>], <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb13-209"><a href="#cb13-209" aria-hidden="true" tabindex="-1"></a>D2 <span class="op">=</span> [[<span class="dv">1</span>, <span class="dv">2</span>], <span class="dv">2</span>, <span class="dv">3</span>]</span>
+<span id="cb13-210"><a href="#cb13-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-211"><a href="#cb13-211" aria-hidden="true" tabindex="-1"></a>E <span class="op">=</span> (<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb13-212"><a href="#cb13-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-213"><a href="#cb13-213" aria-hidden="true" tabindex="-1"></a>FF <span class="op">=</span> ((<span class="dv">1</span>, <span class="dv">2</span>), (<span class="dv">3</span>, <span class="dv">4</span>))</span>
+<span id="cb13-214"><a href="#cb13-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-215"><a href="#cb13-215" aria-hidden="true" tabindex="-1"></a>G <span class="op">=</span> ((<span class="dv">1</span>, <span class="dv">2</span>), <span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb13-216"><a href="#cb13-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-217"><a href="#cb13-217" aria-hidden="true" tabindex="-1"></a>H <span class="op">=</span> {<span class="st">"a"</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>],  <span class="st">"b"</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]}</span>
+<span id="cb13-218"><a href="#cb13-218" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb13-219"><a href="#cb13-219" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> {<span class="st">"a"</span>: <span class="dv">1</span>,<span class="st">"b"</span>: [<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]}</span>
+<span id="cb13-220"><a href="#cb13-220" aria-hidden="true" tabindex="-1"></a>     </span>
+<span id="cb13-221"><a href="#cb13-221" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> J(a, b):</span>
+<span id="cb13-222"><a href="#cb13-222" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> a <span class="op">+</span> b</span>
+<span id="cb13-223"><a href="#cb13-223" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb13-224"><a href="#cb13-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-225"><a href="#cb13-225" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>B</span>
-<span id="cb13-226"><a href="#cb13-226" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>B)</span>
-<span id="cb13-227"><a href="#cb13-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a><span class="do">### list</span></span>
-<span id="cb13-229"><a href="#cb13-229" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>C</span>
-<span id="cb13-230"><a href="#cb13-230" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>C)</span>
-<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-232"><a href="#cb13-232" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>D1</span>
-<span id="cb13-233"><a href="#cb13-233" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>D1)</span>
-<span id="cb13-234"><a href="#cb13-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-235"><a href="#cb13-235" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>D2</span>
-<span id="cb13-236"><a href="#cb13-236" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>D2)</span>
-<span id="cb13-237"><a href="#cb13-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-238"><a href="#cb13-238" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>E</span>
-<span id="cb13-239"><a href="#cb13-239" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>E)</span>
-<span id="cb13-240"><a href="#cb13-240" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-241"><a href="#cb13-241" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>FF</span>
-<span id="cb13-242"><a href="#cb13-242" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>FF)</span>
-<span id="cb13-243"><a href="#cb13-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-244"><a href="#cb13-244" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>G</span>
-<span id="cb13-245"><a href="#cb13-245" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>G)</span>
-<span id="cb13-246"><a href="#cb13-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-247"><a href="#cb13-247" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>H</span>
-<span id="cb13-248"><a href="#cb13-248" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>H)</span>
-<span id="cb13-249"><a href="#cb13-249" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-250"><a href="#cb13-250" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>I</span>
-<span id="cb13-251"><a href="#cb13-251" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>I)</span>
-<span id="cb13-252"><a href="#cb13-252" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-253"><a href="#cb13-253" aria-hidden="true" tabindex="-1"></a><span class="do">### function</span></span>
-<span id="cb13-254"><a href="#cb13-254" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>J</span>
-<span id="cb13-255"><a href="#cb13-255" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>J)</span>
-<span id="cb13-256"><a href="#cb13-256" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span><span class="fu">J</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span>
-<span id="cb13-257"><a href="#cb13-257" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-227"><a href="#cb13-227" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb13-228"><a href="#cb13-228" aria-hidden="true" tabindex="-1"></a><span class="co">#| comment: "#&gt;"</span></span>
+<span id="cb13-229"><a href="#cb13-229" aria-hidden="true" tabindex="-1"></a><span class="do">### integer</span></span>
+<span id="cb13-230"><a href="#cb13-230" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>A</span>
+<span id="cb13-231"><a href="#cb13-231" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>A)</span>
+<span id="cb13-232"><a href="#cb13-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-233"><a href="#cb13-233" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>B</span>
+<span id="cb13-234"><a href="#cb13-234" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>B)</span>
+<span id="cb13-235"><a href="#cb13-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-236"><a href="#cb13-236" aria-hidden="true" tabindex="-1"></a><span class="do">### list</span></span>
+<span id="cb13-237"><a href="#cb13-237" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>C</span>
+<span id="cb13-238"><a href="#cb13-238" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>C)</span>
+<span id="cb13-239"><a href="#cb13-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-240"><a href="#cb13-240" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>D1</span>
+<span id="cb13-241"><a href="#cb13-241" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>D1)</span>
+<span id="cb13-242"><a href="#cb13-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-243"><a href="#cb13-243" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>D2</span>
+<span id="cb13-244"><a href="#cb13-244" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>D2)</span>
+<span id="cb13-245"><a href="#cb13-245" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-246"><a href="#cb13-246" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>E</span>
+<span id="cb13-247"><a href="#cb13-247" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>E)</span>
+<span id="cb13-248"><a href="#cb13-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-249"><a href="#cb13-249" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>FF</span>
+<span id="cb13-250"><a href="#cb13-250" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>FF)</span>
+<span id="cb13-251"><a href="#cb13-251" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-252"><a href="#cb13-252" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>G</span>
+<span id="cb13-253"><a href="#cb13-253" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>G)</span>
+<span id="cb13-254"><a href="#cb13-254" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-255"><a href="#cb13-255" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>H</span>
+<span id="cb13-256"><a href="#cb13-256" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>H)</span>
+<span id="cb13-257"><a href="#cb13-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-258"><a href="#cb13-258" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>I</span>
+<span id="cb13-259"><a href="#cb13-259" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>I)</span>
+<span id="cb13-260"><a href="#cb13-260" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-261"><a href="#cb13-261" aria-hidden="true" tabindex="-1"></a><span class="do">### function</span></span>
+<span id="cb13-262"><a href="#cb13-262" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span>J</span>
+<span id="cb13-263"><a href="#cb13-263" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(py<span class="sc">$</span>J)</span>
+<span id="cb13-264"><a href="#cb13-264" aria-hidden="true" tabindex="-1"></a>py<span class="sc">$</span><span class="fu">J</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb13-265"><a href="#cb13-265" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
-
+<footer class="footer"><div class="nav-footer">
+    <div class="nav-footer-left">笔记由安林建立。</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">This book was built with <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
 
 
 </body></html>

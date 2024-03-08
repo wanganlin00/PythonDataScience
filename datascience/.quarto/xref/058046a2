@@ -1,1 +1,1 @@
-{"options":{"fig-title":"图","fig-prefix":"图","chapters":true},"entries":[],"headings":["定义函数","传参","形参parameter和实参argument","返回值","返回字典","传递列表","传递任意数量的实参","模块module","导入整个模块","使用as给模块指定别名","导入特定函数","使用as给函数指定别名","使用-导入模块中使用函数"]}
+{"headings":["定义函数","传参","形参parameter和实参argument","返回值","返回字典","传递列表","传递任意数量的实参","模块module","导入整个模块","使用as给模块指定别名","导入特定函数","使用as给函数指定别名","使用-导入模块中使用函数"],"entries":[],"options":{"tbl-title":"表","fig-title":"图","fig-prefix":"图","chapters":true,"tbl-prefix":"表"}}

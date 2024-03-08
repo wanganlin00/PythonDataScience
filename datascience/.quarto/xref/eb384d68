@@ -1,1 +1,1 @@
-{"entries":[],"options":{"fig-prefix":"图","chapters":true,"fig-title":"图"},"headings":["if-语句","if语句","if-else-语句","if-elif-else-语句","确定列表非空","使用多个列表","while循环","用户选择退出循环","使用标志flag","使用break退出循环","在循环中使用continue","使用while循环处理列表和字典","在列表之间移动元素","删除所有特定值","让用户填充字典"]}
+{"entries":[],"options":{"chapters":true,"fig-title":"图","fig-prefix":"图","tbl-title":"表","tbl-prefix":"表"},"headings":["if-语句","if语句","if-else-语句","if-elif-else-语句","确定列表非空","使用多个列表","while循环","用户选择退出循环","使用标志flag","使用break退出循环","在循环中使用continue","使用while循环处理列表和字典","在列表之间移动元素","删除所有特定值","让用户填充字典"]}
