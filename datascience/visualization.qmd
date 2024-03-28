@@ -1,0 +1,17 @@
+---
+title: "visualization.qmd"
+knitr: 
+  opts_chunk: 
+    comment: "#>>>"
+    collapse: TRUE
+number-sections: true
+code-fold: show
+code-link: true
+code-tools: true
+format: html
+editor: visual
+---
+
+# 数据可视化
+
+Matplotlib

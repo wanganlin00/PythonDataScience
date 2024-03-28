@@ -13,7 +13,9 @@ code-tools: true
 
 面向对象编程（object-oriented programming，OOP）：编写表示现实世界中的事物和情景的**类（class）并**基于这些类创建**对象（object）。**在编写类时，你要定义所有对象都具备的通用行为。根据类创建对象称为**实例化**，**实例（instance）**
 
-## 定义类和方法
+## 创建类
+
+特殊方法用行话说叫作***magic method***，如\_\_getitem\_\_，***dunder***-getitem，**双下划线方法**
 
 类中的函数称为**方法**，`_init_(self,...)` 是一个特殊方法，其中`self` 形参指向实例，必不可少且必须位于首位。其他形参是基于类创建的实例的初始化属性。可通过实例访问的变量称为**属性（attribute）**。
 
@@ -70,6 +72,69 @@ my_new_car.odometer_reading
 my_new_car.update_odometer(24)
 ```
 
-## 继承inheritance
+## 继承类
 
-原有的类称为父类（parent class），新类称为子类（child class）
+**inheritance** ，原有的类称为**父类（parent class）**或**超类（super class）**，新类称为**子类（child class）**
+
+### 子类
+
+```{python}
+class ElectricCar(Car):               # 括号内指定父类名称
+    '''电动车'''
+    def __init__(self,make,model,year):
+        '''先初始化父类的属性,
+        再初始化电动车的特有属性'''
+        super().__init__(make,model,year) # 调用父类的__init__()方法
+        self.battery_size = 80
+    def battery_capacity(self):
+        '''打印电池容量'''
+        print(f'电池容量为 {self.battery_size} kWh。')
+    def read_odometer(self):              # 重写父类中的方法
+        """打印电动车里程"""
+        print(f"电动车已经行驶了{self.odometer_reading} 千米。")
+
+# 创建对象
+my_ECar = ElectricCar('nissan','leaf',2024)
+print(my_ECar.get_descriptive_name())
+my_ECar.battery_capacity()
+my_ECar.read_odometer()
+```
+
+### 类的组合（composition）
+
+```{python}
+class Battery:
+    '''电池信息'''
+    def __init__(self,manufacture="BYD",material="Lithium_plomers",capacity=100):
+        self.manufacture = manufacture
+        self.material = material
+        self.capacity = capacity
+    def get_descriptive_name(self): 
+        """返回格式规范的描述性信息""" 
+        long_name = f"{self.manufacture} {self.material} {self.capacity}" 
+        return long_name.title() 
+    def print_battery_capacity(self):
+        '''打印电池容量'''
+        print(f'电池容量为 {self.capacity} kWh。')
+        
+class ElectricCar2(Car):             
+    '''电动车'''
+    def __init__(self,make,model,year,):
+        super().__init__(make,model,year) # 调用父类的__init__()方法
+        self.battery = Battery()
+
+my_Ecar2 = ElectricCar2("nissan","leaf",2024)
+my_Ecar2.battery.print_battery_capacity()
+my_Ecar2.battery.get_descriptive_name()
+```
+
+## 导入类
+
+```{from Module import class1,class2 as 别名}
+from Module import * 
+
+
+
+```
+
+## Python标准库

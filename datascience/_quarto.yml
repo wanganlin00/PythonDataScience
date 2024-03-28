@@ -41,6 +41,8 @@ book:
         - control_structure.qmd
         - function.qmd
         - class.qmd
+        - file_RW.qmd
+        - visualization.qmd
     
 
 
