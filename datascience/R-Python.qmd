@@ -12,92 +12,10 @@ code-tools: true
 
 # R-Python {.unnumbered}
 
-## [reticulate 包](https://rstudio.github.io/reticulate/index.html){.uri}
-
-```{r}
-#| comment: "#>"
-library(reticulate)
-```
-
-## **安装 python 模块**
-
-[安装Python module](https://rstudio.github.io/reticulate/articles/python_packages.html)
-
-```{r}
-#| eval: false
-#| comment: "#>"
-# 默认从conda安装
-
-py_install("seaborn")
-py_available()
-# 查看模块是否已安装
-py_module_available('seaborn')
-py_module_available('numpy')
-py_module_available('pandas')
-py_module_available('scanpy')
-py_module_available('pip')
-```
-
-## 调用 Python 模块
-
-```{r}
-#| comment: "#>"
-# 调用os模块(module)的listdir()函数
-os <- import("os")
-os$listdir("./")
-
-# 调用seaborn模块的load_dataset()函数
-# 需要seaborn模块已安装
-sns <- import("seaborn")
-tips <- sns$load_dataset("tips")
-print(head(tips))
-```
-
-## markdown中直接使用Python
-
-```{python}
-import seaborn as sns
-tips = sns.load_dataset("tips")
-tips.head()
-
-sns.scatterplot(x="total_bill", y="tip", data=tips, hue="smoker")
-
-import pandas
-```
-
-## **markdown 中 Python 与 R 对象相互调用**
-
-### Python调用R对象
-
-```{r}
-#| comment: "#>"
-x <- c(1, 2, 3)
-y <- data.frame(a = c(1, 2), b = c(3, 4))
-```
-
-```{python}
-r.x
-r.y
-```
-
-### R调用Python对象
-
-```{python}
-import pandas as pd
-m = [1, 2, 3]
-n = pd.DataFrame([[1, 2], [3, 4]], columns=["a", "b"])
-```
-
-```{r}
-#| comment: "#>"
-py$m
-py$n
-```
-
-## **Python 与 R 对象相互转换**
+## 使用 R 时 reticulate 拥有的互操作性
 
 | R                      | Python            | 例                                               |
-|------------------------|-------------------|--------------------------------------------------|
+|------------------|------------------|------------------------------------|
 | 单元素向量             | 标量Scalar        | `1`、 `1L`、`TRUE`、`"foo"`                      |
 | 未命名列表或多元素向量 | List              | `c(1.0, 2.0, 3.0)`, `c(1L, 2L, 3L)`              |
 | 命名列表               | Dict              | `list(a = 1L, b = 2.0)`, `dict(x = x_data)`      |
@@ -107,6 +25,48 @@ py$n
 | NULL, TRUE, FALSE      | None, True, False | `NULL`, `TRUE`, `ALSE`                           |
 
 : Type conversions
+
+### [reticulate 包](https://rstudio.github.io/reticulate/index.html){.uri}
+
+```{r}
+#| comment: "#>"
+library(reticulate)
+#devtools::install_version( "ggmap",  version = "3.5.2")
+if(!require("tidyverse")) {
+    utils::install.packages("tidyverse")
+    library(tidyverse)
+}
+```
+
+### **R 安装 python 模块**
+
+[安装Python module](https://rstudio.github.io/reticulate/articles/python_packages.html)
+
+```{r}
+#| eval: false
+#| comment: "#>"
+# 默认从conda安装
+py_install("pip")
+# 查看模块是否已安装
+py_module_available('pip')
+py_module_available('numpy')
+py_module_available('pandas')
+```
+
+### R 调用 Python 模块
+
+```{r}
+#| comment: "#>"
+# 调用os模块(module)的listdir()函数
+os <- reticulate::import("os")
+os$listdir("./")
+
+# 调用seaborn模块的load_dataset()函数
+# 需要seaborn模块已安装
+sns <- import("seaborn")
+tips <- sns$load_dataset("tips")
+print(head(tips))
+```
 
 ### **R** → Python
 
@@ -180,6 +140,10 @@ type(r.K3)
 ### **Python** → R
 
 ```{python}
+import pandas as pd
+m = [1, 2, 3]
+n = pd.DataFrame([[1, 2], [3, 4]], columns=["a", "b"])
+
 A = 1
 B = [1, 2, 3]
 C = [[1, 2], [3, 4]]
@@ -202,6 +166,10 @@ def J(a, b):
 
 ```{r}
 #| comment: "#>"
+
+py$m
+py$n
+
 ### integer
 py$A
 class(py$A)
@@ -238,4 +206,11 @@ class(py$I)
 py$J
 class(py$J)
 py$J(2, 3)
+```
+
+## 编写 Python 时 rpy2 拥有的互操作性
+
+```{r}
+# anaconda pip install rpy2 
+py_module_available("rpy2")
 ```
