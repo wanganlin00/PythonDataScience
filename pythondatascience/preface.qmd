@@ -51,23 +51,15 @@ Python package index（pypi） 是一个Python编程语言的软件库。
 
 ![](images/Anaconda-Prompt.jpg){fig-align="center"}
 
-[nvidia驱动](https://www.nvidia.cn/geforce/drivers/)
-
-cmd nvidia-smi
-
-nvcc -V
+#### 虚拟环境
 
 ![](images/conda-envs.jpg){fig-align="center"}
-
-[PyTorch](https://pytorch.org/)版本
-
-conda info
 
 ![](images/pytorch.jpg){fig-align="center"}
 
 ### pip
 
-**命令框 cmd**
+#### **命令框 cmd**
 
 ![](images/pip-command-options.jpg){fig-align="center"}
 
@@ -99,5 +91,5 @@ conda info
 
 ```{r}
 #| comment: "#>"
-sessioninfo::session_info()
+sessionInfo()
 ```
