@@ -28,7 +28,7 @@ print("Python")
 
 ## **在 R**studio **Console 中交互式运行 Python**
 
--   `reticulate::repl_python ()` 进入 Python 环境
+-   `reticulate::repl_python ()` 进入 Python 环境 *read-eval-print-loop* (REPL)
 
 -   `exit / quit` 退出 Python 环境
 
@@ -47,45 +47,67 @@ Python package index（pypi） 是一个Python编程语言的软件库。
 
 ### Anaconda
 
-*library D:*\anaconda3\\Lib\\site-packages
-
-![](images/Anaconda-Prompt.jpg){fig-align="center"}
-
 #### 虚拟环境
 
-![](images/conda-envs.jpg){fig-align="center"}
+##### pytorch
 
+```         
+D:
+cd anaconda3/envs
+conda create -n pytorch python==3.11.7
+conda acticate pytorch
+conda install pythorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 cpuonly -c pytorch
 ![](images/pytorch.jpg){fig-align="center"}
+```
+
+##### gpt_academic
+
+```         
+D:
+cd anaconda3/envs
+conda create -n gptac-venv python==3.11.7
+conda acticate gptac-venv
+cd gptac-venv 
+git clone --depth==1 url.git
+#复制gpt_academic中的requirements.txt文件到gptac-venv
+python -m pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/
+#修改config.py
+cd gpt_academic
+python main.py
+```
+
+![](images/gpt_academic.png){fig-align="center"}
+
+```         
+D:
+cd anaconda3/envs/gptac_venv/gpt_academic
+
+conda activate gptac_venv
+
+python main.py
+```
 
 ### pip
 
-#### **命令框 cmd**
+![](images/Anaconda-Prompt.jpg){fig-align="center"}
 
 ![](images/pip-command-options.jpg){fig-align="center"}
 
-+--------------------------------------------------------------------+--------------------------+
-| ***pip \<command\> \[options\]***                                  |                          |
-+====================================================================+==========================+
-| pip install \<module\>                                             | install packages         |
-|                                                                    |                          |
-| pip install -i https://pypi.tuna.tsinghua.edu.cn/simple/\<module\> |                          |
-+--------------------------------------------------------------------+--------------------------+
-| pip uninstall \<module\>                                           |                          |
-+--------------------------------------------------------------------+--------------------------+
-| pip list                                                           |                          |
-+--------------------------------------------------------------------+--------------------------+
-| pip \--version                                                     | Show version and exit    |
-|                                                                    |                          |
-| pip -V                                                             |                          |
-+--------------------------------------------------------------------+--------------------------+
-| python -m pip install \--upgrade pip                               | install and uptate pip   |
-+--------------------------------------------------------------------+--------------------------+
-| pip install virtualenv                                             | 安装虚拟环境             |
-+--------------------------------------------------------------------+--------------------------+
-| python -m venv venv                                                | 在项目目录中创建虚拟环境 |
-+--------------------------------------------------------------------+--------------------------+
-| Windows: venv\Scripts\activate                                     | 激活虚拟环境             |
-+--------------------------------------------------------------------+--------------------------+
++------------------------------------------------------------------------------+
+| ***pip \<command\> \[options\]***                                            |
++==============================================================================+
+| pip install \<module\>                                                       |
+|                                                                              |
+| pip install SpeechRecognition -i <https://pypi.tuna.tsinghua.edu.cn/simple/> |
++------------------------------------------------------------------------------+
+| pip uninstall \<module\>                                                     |
++------------------------------------------------------------------------------+
+| pip list                                                                     |
++------------------------------------------------------------------------------+
+| pip \--version pip -V                                                        |
++------------------------------------------------------------------------------+
+| python -m pip install \--upgrade pip                                         |
++------------------------------------------------------------------------------+
 
 ## 环境
 
