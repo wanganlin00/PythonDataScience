@@ -1,1 +1,9 @@
-# 序
+# 参考资料 {.unnumbered style="color:red"}
+
+-   [PyPi](https://pypi.org/)
+-   [pandas](https://pandas.pydata.org/)
+-   [numpy](https://numpy.org/)
+-   [biopython](https://biopython.org/wiki/Documentation)
+-   [scanpy](https://scanpy.readthedocs.io/en/stable/)
+-   [Anaconda](https://www.anaconda.com/download/)
+-   [Pytorch](https://pytorch.org/)
