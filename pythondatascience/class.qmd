@@ -1,14 +1,3 @@
----
-knitr: 
-  opts_chunk: 
-    comment: "#>>>"
-    collapse: TRUE
-number-sections: true
-code-fold: show
-code-link: true
-code-tools: true
----
-
 # 类class
 
 面向对象编程（object-oriented programming，OOP）：编写表示现实世界中的事物和情景的**类（class）并**基于这些类创建**对象（object）。**在编写类时，你要定义所有对象都具备的通用行为。根据类创建对象称为**实例化**，**实例（instance）**

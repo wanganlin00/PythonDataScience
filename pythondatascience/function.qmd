@@ -1,14 +1,3 @@
----
-knitr: 
-  opts_chunk: 
-    comment: "#>>>"
-    collapse: TRUE
-number-sections: true
-code-fold: show
-code-link: true
-code-tools: true
----
-
 # 函数
 
 ## 定义函数
@@ -29,8 +18,7 @@ greet_user("lily")
 
 实参即在调用call 函数时传递给函数的信息，例如`greet_user("lily")`中的`"lily"`。
 
-位置实参 关键字实参 
-默认值，在给形参指定默认值时，等号两边不要出现空格，函数调用中的关键字实参也遵循这种约定。
+位置实参 关键字实参 默认值，在给形参指定默认值时，等号两边不要出现空格，函数调用中的关键字实参也遵循这种约定。
 
 ## 返回值
 
@@ -130,29 +118,39 @@ print(user_profile)
 ```
 
 ## 模块module
+
 ## 导入整个模块
-```
+
+```         
 import module_name
 module_name.function_name()
+```
 
-```
 ## 使用as给模块指定别名
-```
+
+```         
 import module_name as mn
 mn.function_name()
 ```
+
 ## 导入特定函数
-```
+
+```         
 from module_name import function_name
 function_name()
 ```
+
 ## 使用as给函数指定别名
-```
+
+```         
 from module_name import function_name as fn
 fn()
 ```
-## 使用* 导入模块中使用函数
+
+## 使用\* 导入模块中使用函数
+
 不建议，同名覆盖
-```
+
+```         
 from module_name import *
 ```

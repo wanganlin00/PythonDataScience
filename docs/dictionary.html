@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.553">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Python Data Science - 4&nbsp; 字典</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./control_structure.html" rel="next">
+<link href="./list.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic_data_type.html">Python</a></li><li class="breadcrumb-item"><a href="./dictionary.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">字典</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Python Data Science</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/Wanganlin00/DataScience/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">参考资料</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./preface.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">写在前面</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">R &lt;—&gt; Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./R-Python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">R &lt;---&gt; Python</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Python</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./basic_data_type.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">基本数据类型</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./list.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">列表</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dictionary.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">字典</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./control_structure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Control structure</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./function.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">函数</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./class.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">类class</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./I-O.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">读入和写出</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pandas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">pandas</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">numpy</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#操纵字典" id="toc-操纵字典" class="nav-link active" data-scroll-target="#操纵字典"><span class="header-section-number">4.1</span> 操纵字典</a>
+  <ul>
+  <li><a href="#访问值" id="toc-访问值" class="nav-link" data-scroll-target="#访问值"><span class="header-section-number">4.1.1</span> 访问值</a></li>
+  <li><a href="#添加键值对" id="toc-添加键值对" class="nav-link" data-scroll-target="#添加键值对"><span class="header-section-number">4.1.2</span> 添加键值对</a></li>
+  <li><a href="#从空字典开始" id="toc-从空字典开始" class="nav-link" data-scroll-target="#从空字典开始"><span class="header-section-number">4.1.3</span> 从空字典开始</a></li>
+  <li><a href="#修改" id="toc-修改" class="nav-link" data-scroll-target="#修改"><span class="header-section-number">4.1.4</span> 修改</a></li>
+  <li><a href="#删除" id="toc-删除" class="nav-link" data-scroll-target="#删除"><span class="header-section-number">4.1.5</span> 删除</a></li>
+  <li><a href="#由类似的对象组成的字典" id="toc-由类似的对象组成的字典" class="nav-link" data-scroll-target="#由类似的对象组成的字典"><span class="header-section-number">4.1.6</span> 由类似的对象组成的字典</a></li>
+  <li><a href="#get方法访问值" id="toc-get方法访问值" class="nav-link" data-scroll-target="#get方法访问值"><span class="header-section-number">4.1.7</span> <code>get()</code>方法访问值</a></li>
+  </ul></li>
+  <li><a href="#遍历字典" id="toc-遍历字典" class="nav-link" data-scroll-target="#遍历字典"><span class="header-section-number">4.2</span> 遍历字典</a>
+  <ul>
+  <li><a href="#遍历所有键值对" id="toc-遍历所有键值对" class="nav-link" data-scroll-target="#遍历所有键值对"><span class="header-section-number">4.2.1</span> 遍历所有键值对</a></li>
+  <li><a href="#遍历所有键" id="toc-遍历所有键" class="nav-link" data-scroll-target="#遍历所有键"><span class="header-section-number">4.2.2</span> 遍历所有键</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">4.2.3</span> </a></li>
+  </ul></li>
+  <li><a href="#默认遍历键" id="toc-默认遍历键" class="nav-link" data-scroll-target="#默认遍历键"><span class="header-section-number">4.3</span> 默认遍历键</a>
+  <ul>
+  <li><a href="#按特定顺序遍历所有键" id="toc-按特定顺序遍历所有键" class="nav-link" data-scroll-target="#按特定顺序遍历所有键"><span class="header-section-number">4.3.1</span> 按特定顺序遍历所有键</a></li>
+  <li><a href="#遍历所有值" id="toc-遍历所有值" class="nav-link" data-scroll-target="#遍历所有值"><span class="header-section-number">4.3.2</span> 遍历所有值</a></li>
+  </ul></li>
+  <li><a href="#集合set" id="toc-集合set" class="nav-link" data-scroll-target="#集合set"><span class="header-section-number">4.4</span> 集合set</a></li>
+  <li><a href="#嵌套" id="toc-嵌套" class="nav-link" data-scroll-target="#嵌套"><span class="header-section-number">4.5</span> 嵌套</a>
+  <ul>
+  <li><a href="#字典列表" id="toc-字典列表" class="nav-link" data-scroll-target="#字典列表"><span class="header-section-number">4.5.1</span> 字典列表</a></li>
+  <li><a href="#在字典中存储列表" id="toc-在字典中存储列表" class="nav-link" data-scroll-target="#在字典中存储列表"><span class="header-section-number">4.5.2</span> 在字典中存储列表</a></li>
+  <li><a href="#在字典中存储字典" id="toc-在字典中存储字典" class="nav-link" data-scroll-target="#在字典中存储字典"><span class="header-section-number">4.5.3</span> 在字典中存储字典</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/Wanganlin00/DataScience/edit/main/dictionary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Wanganlin00/DataScience/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./basic_data_type.html">Python</a></li><li class="breadcrumb-item"><a href="./dictionary.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">字典</span></a></li></ol></nav>
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">字典</span></h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>字典（dictionary）是一系列<strong><em>键值对</em></strong>。每个<strong><em>键</em></strong>相关联的<strong><em>值</em></strong>可以是数、字符串、列表、元组乃至字典。</p>
+<div id="a15e2c05" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>alien_0 <span class="op">=</span> {<span class="st">"color"</span>:<span class="st">"green"</span>,<span class="st">"points"</span>:<span class="dv">5</span>}</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>alien_0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="1">
+<pre><code>{'color': 'green', 'points': 5}</code></pre>
+</div>
+</div>
+<section id="操纵字典" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="操纵字典"><span class="header-section-number">4.1</span> 操纵字典</h2>
+<section id="访问值" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="访问值"><span class="header-section-number">4.1.1</span> 访问值</h3>
+<div id="03375a4d" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"color"</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"points"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>5</code></pre>
+</div>
+</div>
+</section>
+<section id="添加键值对" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="添加键值对"><span class="header-section-number">4.1.2</span> 添加键值对</h3>
+<div id="c1537168" class="cell" data-execution_count="3">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"x"</span>] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"y"</span>] <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>alien_0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>{'color': 'green', 'points': 5, 'x': 0, 'y': 25}</code></pre>
+</div>
+</div>
+</section>
+<section id="从空字典开始" class="level3" data-number="4.1.3">
+<h3 data-number="4.1.3" class="anchored" data-anchor-id="从空字典开始"><span class="header-section-number">4.1.3</span> 从空字典开始</h3>
+<div id="40846439" class="cell" data-execution_count="4">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>alien_0 <span class="op">=</span> {}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"color"</span>]  <span class="op">=</span> <span class="st">"green"</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"points"</span>] <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>alien_0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>{'color': 'green', 'points': 5}</code></pre>
+</div>
+</div>
+</section>
+<section id="修改" class="level3" data-number="4.1.4">
+<h3 data-number="4.1.4" class="anchored" data-anchor-id="修改"><span class="header-section-number">4.1.4</span> 修改</h3>
+<div id="d8866344" class="cell" data-execution_count="5">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"color"</span>] <span class="op">=</span>[ <span class="st">"yellow"</span>,<span class="st">"red"</span>,<span class="st">"blue"</span>]</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>alien_0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>{'color': ['yellow', 'red', 'blue'], 'points': 5}</code></pre>
+</div>
+</div>
+</section>
+<section id="删除" class="level3" data-number="4.1.5">
+<h3 data-number="4.1.5" class="anchored" data-anchor-id="删除"><span class="header-section-number">4.1.5</span> 删除</h3>
+<div id="507b583f" class="cell" data-execution_count="6">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>alien_0 <span class="op">=</span> {<span class="st">"color"</span>:<span class="st">"green"</span>,<span class="st">"points"</span>:<span class="dv">5</span>}</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> alien_0[<span class="st">"points"</span>]</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>alien_0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="6">
+<pre><code>{'color': 'green'}</code></pre>
+</div>
+</div>
+</section>
+<section id="由类似的对象组成的字典" class="level3" data-number="4.1.6">
+<h3 data-number="4.1.6" class="anchored" data-anchor-id="由类似的对象组成的字典"><span class="header-section-number">4.1.6</span> 由类似的对象组成的字典</h3>
+<div id="f6692f98" class="cell" data-execution_count="7">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>like_language<span class="op">=</span>{</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"jen"</span>:<span class="st">"python"</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sarah"</span>:<span class="st">"c"</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"edward"</span>:<span class="st">"r"</span>,</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"phil"</span>:<span class="st">"python"</span>,</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>like_language</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="7">
+<pre><code>{'jen': 'python', 'sarah': 'c', 'edward': 'r', 'phil': 'python'}</code></pre>
+</div>
+</div>
+</section>
+<section id="get方法访问值" class="level3" data-number="4.1.7">
+<h3 data-number="4.1.7" class="anchored" data-anchor-id="get方法访问值"><span class="header-section-number">4.1.7</span> <code>get()</code>方法访问值</h3>
+<div id="01e1d8f6" class="cell" data-execution_count="8">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"speed"</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; Traceback (most recent call last):</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt;   File "&lt;string&gt;", line 1, in &lt;module&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; KeyError: 'speed'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>get()方法第一个参数用于指定键key，第二个参数为指定的键不存在时的返回值。</p>
+<div id="7035b8fc" class="cell" data-execution_count="9">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>alien_0 <span class="op">=</span> {<span class="st">"color"</span>:<span class="st">"green"</span>,<span class="st">"points"</span>:<span class="dv">5</span>}</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>alien_0.get(<span class="st">"color"</span>)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>alien_0.get(<span class="st">"speed"</span>,<span class="st">"Error,no existing"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="8">
+<pre><code>'Error,no existing'</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="遍历字典" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="遍历字典"><span class="header-section-number">4.2</span> 遍历字典</h2>
+<section id="遍历所有键值对" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="遍历所有键值对"><span class="header-section-number">4.2.1</span> 遍历所有键值对</h3>
+<p><code>Dict.items()</code></p>
+<div id="7b3ba1b6" class="cell" data-execution_count="10">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>like_language<span class="op">=</span>{</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"jen"</span>:<span class="st">"python"</span>,</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sarah"</span>:<span class="st">"c"</span>,</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"edward"</span>:<span class="st">"r"</span>,</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"phil"</span>:<span class="st">"python"</span>,</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>like_language.items()</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,j <span class="kw">in</span> like_language.items():</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Key:</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Value:</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">'s favorite language is </span><span class="sc">{</span>j<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">.</span><span class="ch">\n</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Key:jen
+Value:python
+Jen's favorite language is Python.
+
+Key:sarah
+Value:c
+Sarah's favorite language is C.
+
+Key:edward
+Value:r
+Edward's favorite language is R.
+
+Key:phil
+Value:python
+Phil's favorite language is Python.
+</code></pre>
+</div>
+</div>
+</section>
+<section id="遍历所有键" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="遍历所有键"><span class="header-section-number">4.2.2</span> 遍历所有键</h3>
+<p><code>Dict.keys()</code></p>
+<div id="4ce7e889" class="cell" data-execution_count="11">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>like_language.keys()</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> like_language.keys():</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Key:</span><span class="sc">{</span>i<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Key:Jen
+Key:Sarah
+Key:Edward
+Key:Phil</code></pre>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>默认遍历使用键</p>
+<div id="f3c97fe3" class="cell" data-execution_count="12">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> like_language: </span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Key:</span><span class="sc">{</span>i<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Key:Jen
+Key:Sarah
+Key:Edward
+Key:Phil</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="section" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="section"><span class="header-section-number">4.2.3</span> </h3>
+</section>
+</section>
+<section id="默认遍历键" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="默认遍历键"><span class="header-section-number">4.3</span> 默认遍历键</h2>
+<p>for i in like_language: print(f”Key:{i.title()}“)</p>
+<section id="按特定顺序遍历所有键" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="按特定顺序遍历所有键"><span class="header-section-number">4.3.1</span> 按特定顺序遍历所有键</h3>
+<p><code>sorted()函数</code></p>
+<div id="2381ec5f" class="cell" data-execution_count="13">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>like_language<span class="op">=</span>{</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"jen"</span>:<span class="st">"python"</span>,</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sarah"</span>:<span class="st">"c"</span>,</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"edward"</span>:<span class="st">"r"</span>,</span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">"phil"</span>:<span class="st">"python"</span>,</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">sorted</span>(like_language.keys()):</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i.title())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Edward
+Jen
+Phil
+Sarah</code></pre>
+</div>
+</div>
+</section>
+<section id="遍历所有值" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="遍历所有值"><span class="header-section-number">4.3.2</span> 遍历所有值</h3>
+<p><code>Dict.values()</code></p>
+<div id="30eb9961" class="cell" data-execution_count="14">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>like_language.values()</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lan <span class="kw">in</span> like_language.values():</span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    lan.title()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>为剔除重复项，可使用集合<code>set()</code>函数。</p>
+<div id="41149e52" class="cell" data-execution_count="15">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lan <span class="kw">in</span> <span class="bu">set</span>(like_language.values()):</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>    lan.title()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section>
+</section>
+<section id="集合set" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="集合set"><span class="header-section-number">4.4</span> 集合set</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>集合的性质：互异性，无序性，确定性。</p>
+<p>可以使用一对花括号{}直接创建集合，用逗号分隔。</p>
+<div id="50f0d999" class="cell" data-execution_count="16">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>language_set <span class="op">=</span> {<span class="st">"python"</span>,<span class="st">"r"</span>,<span class="st">"c"</span>}</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>language_set</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="15">
+<pre><code>{'c', 'python', 'r'}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="嵌套" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="嵌套"><span class="header-section-number">4.5</span> 嵌套</h2>
+<section id="字典列表" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="字典列表"><span class="header-section-number">4.5.1</span> 字典列表</h3>
+<p>列表的每个元素是一个字典</p>
+<div id="2e3bb0ab" class="cell" data-execution_count="17">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>alien_0 <span class="op">=</span> {<span class="st">'color'</span>: <span class="st">'green'</span>, <span class="st">'points'</span>: <span class="dv">5</span>}</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>alien_1 <span class="op">=</span> {<span class="st">'color'</span>: <span class="st">'yellow'</span>, <span class="st">'points'</span>: <span class="dv">10</span>} </span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>alien_2 <span class="op">=</span> {<span class="st">'color'</span>: <span class="st">'red'</span>, <span class="st">'points'</span>: <span class="dv">15</span>}</span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>aliens <span class="op">=</span> [alien_0, alien_1, alien_2] </span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alien <span class="kw">in</span> aliens: </span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(alien)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>{'color': 'green', 'points': 5}
+{'color': 'yellow', 'points': 10}
+{'color': 'red', 'points': 15}</code></pre>
+</div>
+</div>
+</section>
+<section id="在字典中存储列表" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="在字典中存储列表"><span class="header-section-number">4.5.2</span> 在字典中存储列表</h3>
+<div id="d936e2fe" class="cell" data-execution_count="18">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>r_object <span class="op">=</span> {</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"num"</span>:[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>],</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">"strings"</span>:[<span class="st">"qwe"</span>,<span class="st">"asd"</span>,<span class="st">"zxc"</span>],</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">"bool"</span>:[<span class="va">True</span>,<span class="va">False</span>],</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>r_object[<span class="st">"num"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="17">
+<pre><code>[1, 2, 3, 4, 5]</code></pre>
+</div>
+</div>
+</section>
+<section id="在字典中存储字典" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="在字典中存储字典"><span class="header-section-number">4.5.3</span> 在字典中存储字典</h3>
+<div id="a838f958" class="cell" data-execution_count="19">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>email <span class="op">=</span> {</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tencent"</span>:{</span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prefix"</span>:<span class="st">"3036683293"</span>,</span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a>        <span class="st">"suffix"</span>:<span class="st">"@qq.com"</span>,</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>        <span class="st">"state"</span>:<span class="st">"hardly"</span></span>
+<span id="cb34-6"><a href="#cb34-6" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb34-7"><a href="#cb34-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">"USTC"</span>:{</span>
+<span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prefix"</span>:<span class="st">"wangal00"</span>,</span>
+<span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>        <span class="st">"suffix"</span>:<span class="st">"@mail.ustc.edu.cn"</span>,</span>
+<span id="cb34-10"><a href="#cb34-10" aria-hidden="true" tabindex="-1"></a>        <span class="st">"state"</span>:<span class="st">"usually"</span>,</span>
+<span id="cb34-11"><a href="#cb34-11" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb34-12"><a href="#cb34-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Microsoft"</span>:{</span>
+<span id="cb34-13"><a href="#cb34-13" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prefix"</span>:<span class="st">"wanganlin00"</span>,</span>
+<span id="cb34-14"><a href="#cb34-14" aria-hidden="true" tabindex="-1"></a>        <span class="st">"suffix"</span>:<span class="st">"@outlook.com"</span>,</span>
+<span id="cb34-15"><a href="#cb34-15" aria-hidden="true" tabindex="-1"></a>        <span class="st">"state"</span>:<span class="st">"often"</span>,</span>
+<span id="cb34-16"><a href="#cb34-16" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb34-17"><a href="#cb34-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Google"</span>:{</span>
+<span id="cb34-18"><a href="#cb34-18" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prefix"</span>:<span class="st">"wanganlin00"</span>,</span>
+<span id="cb34-19"><a href="#cb34-19" aria-hidden="true" tabindex="-1"></a>        <span class="st">"suffix"</span>:<span class="st">"@gmail.com"</span>,</span>
+<span id="cb34-20"><a href="#cb34-20" aria-hidden="true" tabindex="-1"></a>        <span class="st">"state"</span>:<span class="st">"can't"</span>,</span>
+<span id="cb34-21"><a href="#cb34-21" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb34-22"><a href="#cb34-22" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb34-23"><a href="#cb34-23" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,j <span class="kw">in</span> email.items():</span>
+<span id="cb34-24"><a href="#cb34-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Belongs to </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">:"</span>)</span>
+<span id="cb34-25"><a href="#cb34-25" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'My email is </span><span class="sc">{</span>j[<span class="st">"prefix"</span>]<span class="sc">}{</span>j[<span class="st">"suffix"</span>]<span class="sc">}</span><span class="ss"> , I </span><span class="sc">{</span>j[<span class="st">"state"</span>]<span class="sc">}</span><span class="ss"> use it.</span><span class="ch">\n</span><span class="ss">'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Belongs to Tencent:
+My email is 3036683293@qq.com , I hardly use it.
+
+Belongs to USTC:
+My email is wangal00@mail.ustc.edu.cn , I usually use it.
+
+Belongs to Microsoft:
+My email is wanganlin00@outlook.com , I often use it.
+
+Belongs to Google:
+My email is wanganlin00@gmail.com , I can't use it.
+</code></pre>
+</div>
+</div>
+
+
+<!-- -->
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/wanganlin00\.github\.io\/DataScience\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./list.html" class="pagination-link" aria-label="列表">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">列表</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./control_structure.html" class="pagination-link" aria-label="Control structure">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Control structure</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb36" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 字典</span></span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>字典（dictionary）是一系列***键值对***。每个***键***相关联的***值***可以是数、字符串、列表、元组乃至字典。</span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-7"><a href="#cb36-7" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-8"><a href="#cb36-8" aria-hidden="true" tabindex="-1"></a>alien_0 <span class="op">=</span> {<span class="st">"color"</span>:<span class="st">"green"</span>,<span class="st">"points"</span>:<span class="dv">5</span>}</span>
+<span id="cb36-9"><a href="#cb36-9" aria-hidden="true" tabindex="-1"></a>alien_0</span>
+<span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-12"><a href="#cb36-12" aria-hidden="true" tabindex="-1"></a><span class="fu">## 操纵字典</span></span>
+<span id="cb36-13"><a href="#cb36-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-14"><a href="#cb36-14" aria-hidden="true" tabindex="-1"></a><span class="fu">### 访问值</span></span>
+<span id="cb36-15"><a href="#cb36-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-18"><a href="#cb36-18" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-19"><a href="#cb36-19" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"color"</span>]</span>
+<span id="cb36-20"><a href="#cb36-20" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"points"</span>]</span>
+<span id="cb36-21"><a href="#cb36-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-22"><a href="#cb36-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-23"><a href="#cb36-23" aria-hidden="true" tabindex="-1"></a><span class="fu">### 添加键值对</span></span>
+<span id="cb36-24"><a href="#cb36-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-27"><a href="#cb36-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-28"><a href="#cb36-28" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"x"</span>] <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb36-29"><a href="#cb36-29" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"y"</span>] <span class="op">=</span> <span class="dv">25</span></span>
+<span id="cb36-30"><a href="#cb36-30" aria-hidden="true" tabindex="-1"></a>alien_0</span>
+<span id="cb36-31"><a href="#cb36-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-32"><a href="#cb36-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-33"><a href="#cb36-33" aria-hidden="true" tabindex="-1"></a><span class="fu">### 从空字典开始</span></span>
+<span id="cb36-34"><a href="#cb36-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-37"><a href="#cb36-37" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-38"><a href="#cb36-38" aria-hidden="true" tabindex="-1"></a>alien_0 <span class="op">=</span> {}</span>
+<span id="cb36-39"><a href="#cb36-39" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"color"</span>]  <span class="op">=</span> <span class="st">"green"</span></span>
+<span id="cb36-40"><a href="#cb36-40" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"points"</span>] <span class="op">=</span> <span class="dv">5</span></span>
+<span id="cb36-41"><a href="#cb36-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-42"><a href="#cb36-42" aria-hidden="true" tabindex="-1"></a>alien_0</span>
+<span id="cb36-43"><a href="#cb36-43" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-44"><a href="#cb36-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-45"><a href="#cb36-45" aria-hidden="true" tabindex="-1"></a><span class="fu">### 修改</span></span>
+<span id="cb36-46"><a href="#cb36-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-49"><a href="#cb36-49" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-50"><a href="#cb36-50" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"color"</span>] <span class="op">=</span>[ <span class="st">"yellow"</span>,<span class="st">"red"</span>,<span class="st">"blue"</span>]</span>
+<span id="cb36-51"><a href="#cb36-51" aria-hidden="true" tabindex="-1"></a>alien_0</span>
+<span id="cb36-52"><a href="#cb36-52" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-53"><a href="#cb36-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-54"><a href="#cb36-54" aria-hidden="true" tabindex="-1"></a><span class="fu">### 删除</span></span>
+<span id="cb36-55"><a href="#cb36-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-58"><a href="#cb36-58" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-59"><a href="#cb36-59" aria-hidden="true" tabindex="-1"></a>alien_0 <span class="op">=</span> {<span class="st">"color"</span>:<span class="st">"green"</span>,<span class="st">"points"</span>:<span class="dv">5</span>}</span>
+<span id="cb36-60"><a href="#cb36-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-61"><a href="#cb36-61" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> alien_0[<span class="st">"points"</span>]</span>
+<span id="cb36-62"><a href="#cb36-62" aria-hidden="true" tabindex="-1"></a>alien_0</span>
+<span id="cb36-63"><a href="#cb36-63" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-64"><a href="#cb36-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-65"><a href="#cb36-65" aria-hidden="true" tabindex="-1"></a><span class="fu">### 由类似的对象组成的字典</span></span>
+<span id="cb36-66"><a href="#cb36-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-69"><a href="#cb36-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-70"><a href="#cb36-70" aria-hidden="true" tabindex="-1"></a>like_language<span class="op">=</span>{</span>
+<span id="cb36-71"><a href="#cb36-71" aria-hidden="true" tabindex="-1"></a>    <span class="st">"jen"</span>:<span class="st">"python"</span>,</span>
+<span id="cb36-72"><a href="#cb36-72" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sarah"</span>:<span class="st">"c"</span>,</span>
+<span id="cb36-73"><a href="#cb36-73" aria-hidden="true" tabindex="-1"></a>    <span class="st">"edward"</span>:<span class="st">"r"</span>,</span>
+<span id="cb36-74"><a href="#cb36-74" aria-hidden="true" tabindex="-1"></a>    <span class="st">"phil"</span>:<span class="st">"python"</span>,</span>
+<span id="cb36-75"><a href="#cb36-75" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb36-76"><a href="#cb36-76" aria-hidden="true" tabindex="-1"></a>like_language</span>
+<span id="cb36-77"><a href="#cb36-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-78"><a href="#cb36-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-79"><a href="#cb36-79" aria-hidden="true" tabindex="-1"></a><span class="fu">### `get()`方法访问值</span></span>
+<span id="cb36-80"><a href="#cb36-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-83"><a href="#cb36-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-84"><a href="#cb36-84" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb36-85"><a href="#cb36-85" aria-hidden="true" tabindex="-1"></a>alien_0[<span class="st">"speed"</span>]</span>
+<span id="cb36-86"><a href="#cb36-86" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; Traceback (most recent call last):</span></span>
+<span id="cb36-87"><a href="#cb36-87" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt;   File "&lt;string&gt;", line 1, in &lt;module&gt;</span></span>
+<span id="cb36-88"><a href="#cb36-88" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;&gt;&gt; KeyError: 'speed'</span></span>
+<span id="cb36-89"><a href="#cb36-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-90"><a href="#cb36-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-91"><a href="#cb36-91" aria-hidden="true" tabindex="-1"></a>get()方法第一个参数用于指定键key，第二个参数为指定的键不存在时的返回值。</span>
+<span id="cb36-92"><a href="#cb36-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-95"><a href="#cb36-95" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-96"><a href="#cb36-96" aria-hidden="true" tabindex="-1"></a>alien_0 <span class="op">=</span> {<span class="st">"color"</span>:<span class="st">"green"</span>,<span class="st">"points"</span>:<span class="dv">5</span>}</span>
+<span id="cb36-97"><a href="#cb36-97" aria-hidden="true" tabindex="-1"></a>alien_0.get(<span class="st">"color"</span>)</span>
+<span id="cb36-98"><a href="#cb36-98" aria-hidden="true" tabindex="-1"></a>alien_0.get(<span class="st">"speed"</span>,<span class="st">"Error,no existing"</span>)</span>
+<span id="cb36-99"><a href="#cb36-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-100"><a href="#cb36-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-101"><a href="#cb36-101" aria-hidden="true" tabindex="-1"></a><span class="fu">## 遍历字典</span></span>
+<span id="cb36-102"><a href="#cb36-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-103"><a href="#cb36-103" aria-hidden="true" tabindex="-1"></a><span class="fu">### 遍历所有键值对</span></span>
+<span id="cb36-104"><a href="#cb36-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-105"><a href="#cb36-105" aria-hidden="true" tabindex="-1"></a><span class="in">`Dict.items()`</span></span>
+<span id="cb36-106"><a href="#cb36-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-109"><a href="#cb36-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-110"><a href="#cb36-110" aria-hidden="true" tabindex="-1"></a>like_language<span class="op">=</span>{</span>
+<span id="cb36-111"><a href="#cb36-111" aria-hidden="true" tabindex="-1"></a>    <span class="st">"jen"</span>:<span class="st">"python"</span>,</span>
+<span id="cb36-112"><a href="#cb36-112" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sarah"</span>:<span class="st">"c"</span>,</span>
+<span id="cb36-113"><a href="#cb36-113" aria-hidden="true" tabindex="-1"></a>    <span class="st">"edward"</span>:<span class="st">"r"</span>,</span>
+<span id="cb36-114"><a href="#cb36-114" aria-hidden="true" tabindex="-1"></a>    <span class="st">"phil"</span>:<span class="st">"python"</span>,</span>
+<span id="cb36-115"><a href="#cb36-115" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb36-116"><a href="#cb36-116" aria-hidden="true" tabindex="-1"></a>like_language.items()</span>
+<span id="cb36-117"><a href="#cb36-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-118"><a href="#cb36-118" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,j <span class="kw">in</span> like_language.items():</span>
+<span id="cb36-119"><a href="#cb36-119" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Key:</span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-120"><a href="#cb36-120" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Value:</span><span class="sc">{</span>j<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-121"><a href="#cb36-121" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>i<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">'s favorite language is </span><span class="sc">{</span>j<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">.</span><span class="ch">\n</span><span class="ss">"</span>)</span>
+<span id="cb36-122"><a href="#cb36-122" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-123"><a href="#cb36-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-124"><a href="#cb36-124" aria-hidden="true" tabindex="-1"></a><span class="fu">### 遍历所有键</span></span>
+<span id="cb36-125"><a href="#cb36-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-126"><a href="#cb36-126" aria-hidden="true" tabindex="-1"></a><span class="in">`Dict.keys()`</span></span>
+<span id="cb36-127"><a href="#cb36-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-130"><a href="#cb36-130" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-131"><a href="#cb36-131" aria-hidden="true" tabindex="-1"></a>like_language.keys()</span>
+<span id="cb36-132"><a href="#cb36-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-133"><a href="#cb36-133" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> like_language.keys():</span>
+<span id="cb36-134"><a href="#cb36-134" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Key:</span><span class="sc">{</span>i<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-135"><a href="#cb36-135" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-136"><a href="#cb36-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-137"><a href="#cb36-137" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb36-138"><a href="#cb36-138" aria-hidden="true" tabindex="-1"></a>默认遍历使用键</span>
+<span id="cb36-139"><a href="#cb36-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-142"><a href="#cb36-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-143"><a href="#cb36-143" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> like_language: </span>
+<span id="cb36-144"><a href="#cb36-144" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Key:</span><span class="sc">{</span>i<span class="sc">.</span>title()<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb36-145"><a href="#cb36-145" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-146"><a href="#cb36-146" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb36-147"><a href="#cb36-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-148"><a href="#cb36-148" aria-hidden="true" tabindex="-1"></a><span class="fu">### </span></span>
+<span id="cb36-149"><a href="#cb36-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-150"><a href="#cb36-150" aria-hidden="true" tabindex="-1"></a><span class="fu">## 默认遍历键</span></span>
+<span id="cb36-151"><a href="#cb36-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-152"><a href="#cb36-152" aria-hidden="true" tabindex="-1"></a>for i in like_language: print(f"Key:{i.title()}")</span>
+<span id="cb36-153"><a href="#cb36-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-154"><a href="#cb36-154" aria-hidden="true" tabindex="-1"></a><span class="fu">### 按特定顺序遍历所有键</span></span>
+<span id="cb36-155"><a href="#cb36-155" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-156"><a href="#cb36-156" aria-hidden="true" tabindex="-1"></a><span class="in">`sorted()函数`</span></span>
+<span id="cb36-157"><a href="#cb36-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-160"><a href="#cb36-160" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-161"><a href="#cb36-161" aria-hidden="true" tabindex="-1"></a>like_language<span class="op">=</span>{</span>
+<span id="cb36-162"><a href="#cb36-162" aria-hidden="true" tabindex="-1"></a>    <span class="st">"jen"</span>:<span class="st">"python"</span>,</span>
+<span id="cb36-163"><a href="#cb36-163" aria-hidden="true" tabindex="-1"></a>    <span class="st">"sarah"</span>:<span class="st">"c"</span>,</span>
+<span id="cb36-164"><a href="#cb36-164" aria-hidden="true" tabindex="-1"></a>    <span class="st">"edward"</span>:<span class="st">"r"</span>,</span>
+<span id="cb36-165"><a href="#cb36-165" aria-hidden="true" tabindex="-1"></a>    <span class="st">"phil"</span>:<span class="st">"python"</span>,</span>
+<span id="cb36-166"><a href="#cb36-166" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb36-167"><a href="#cb36-167" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">sorted</span>(like_language.keys()):</span>
+<span id="cb36-168"><a href="#cb36-168" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(i.title())</span>
+<span id="cb36-169"><a href="#cb36-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-170"><a href="#cb36-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-171"><a href="#cb36-171" aria-hidden="true" tabindex="-1"></a><span class="fu">### 遍历所有值</span></span>
+<span id="cb36-172"><a href="#cb36-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-173"><a href="#cb36-173" aria-hidden="true" tabindex="-1"></a><span class="in">`Dict.values()`</span></span>
+<span id="cb36-174"><a href="#cb36-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-177"><a href="#cb36-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-178"><a href="#cb36-178" aria-hidden="true" tabindex="-1"></a>like_language.values()</span>
+<span id="cb36-179"><a href="#cb36-179" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lan <span class="kw">in</span> like_language.values():</span>
+<span id="cb36-180"><a href="#cb36-180" aria-hidden="true" tabindex="-1"></a>    lan.title()</span>
+<span id="cb36-181"><a href="#cb36-181" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-182"><a href="#cb36-182" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-183"><a href="#cb36-183" aria-hidden="true" tabindex="-1"></a>为剔除重复项，可使用集合<span class="in">`set()`</span>函数。</span>
+<span id="cb36-184"><a href="#cb36-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-187"><a href="#cb36-187" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-188"><a href="#cb36-188" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> lan <span class="kw">in</span> <span class="bu">set</span>(like_language.values()):</span>
+<span id="cb36-189"><a href="#cb36-189" aria-hidden="true" tabindex="-1"></a>    lan.title()</span>
+<span id="cb36-190"><a href="#cb36-190" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-191"><a href="#cb36-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-192"><a href="#cb36-192" aria-hidden="true" tabindex="-1"></a><span class="fu">## 集合set</span></span>
+<span id="cb36-193"><a href="#cb36-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-194"><a href="#cb36-194" aria-hidden="true" tabindex="-1"></a>::: callout-note</span>
+<span id="cb36-195"><a href="#cb36-195" aria-hidden="true" tabindex="-1"></a>集合的性质：互异性，无序性，确定性。</span>
+<span id="cb36-196"><a href="#cb36-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-197"><a href="#cb36-197" aria-hidden="true" tabindex="-1"></a>可以使用一对花括号{}直接创建集合，用逗号分隔。</span>
+<span id="cb36-198"><a href="#cb36-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-201"><a href="#cb36-201" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-202"><a href="#cb36-202" aria-hidden="true" tabindex="-1"></a>language_set <span class="op">=</span> {<span class="st">"python"</span>,<span class="st">"r"</span>,<span class="st">"c"</span>}</span>
+<span id="cb36-203"><a href="#cb36-203" aria-hidden="true" tabindex="-1"></a>language_set</span>
+<span id="cb36-204"><a href="#cb36-204" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-205"><a href="#cb36-205" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb36-206"><a href="#cb36-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-207"><a href="#cb36-207" aria-hidden="true" tabindex="-1"></a><span class="fu">## 嵌套</span></span>
+<span id="cb36-208"><a href="#cb36-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-209"><a href="#cb36-209" aria-hidden="true" tabindex="-1"></a><span class="fu">### 字典列表</span></span>
+<span id="cb36-210"><a href="#cb36-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-211"><a href="#cb36-211" aria-hidden="true" tabindex="-1"></a>列表的每个元素是一个字典</span>
+<span id="cb36-212"><a href="#cb36-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-215"><a href="#cb36-215" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-216"><a href="#cb36-216" aria-hidden="true" tabindex="-1"></a>alien_0 <span class="op">=</span> {<span class="st">'color'</span>: <span class="st">'green'</span>, <span class="st">'points'</span>: <span class="dv">5</span>}</span>
+<span id="cb36-217"><a href="#cb36-217" aria-hidden="true" tabindex="-1"></a>alien_1 <span class="op">=</span> {<span class="st">'color'</span>: <span class="st">'yellow'</span>, <span class="st">'points'</span>: <span class="dv">10</span>} </span>
+<span id="cb36-218"><a href="#cb36-218" aria-hidden="true" tabindex="-1"></a>alien_2 <span class="op">=</span> {<span class="st">'color'</span>: <span class="st">'red'</span>, <span class="st">'points'</span>: <span class="dv">15</span>}</span>
+<span id="cb36-219"><a href="#cb36-219" aria-hidden="true" tabindex="-1"></a>aliens <span class="op">=</span> [alien_0, alien_1, alien_2] </span>
+<span id="cb36-220"><a href="#cb36-220" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> alien <span class="kw">in</span> aliens: </span>
+<span id="cb36-221"><a href="#cb36-221" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(alien)</span>
+<span id="cb36-222"><a href="#cb36-222" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-223"><a href="#cb36-223" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-224"><a href="#cb36-224" aria-hidden="true" tabindex="-1"></a><span class="fu">### 在字典中存储列表</span></span>
+<span id="cb36-225"><a href="#cb36-225" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-228"><a href="#cb36-228" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-229"><a href="#cb36-229" aria-hidden="true" tabindex="-1"></a>r_object <span class="op">=</span> {</span>
+<span id="cb36-230"><a href="#cb36-230" aria-hidden="true" tabindex="-1"></a>    <span class="st">"num"</span>:[<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>],</span>
+<span id="cb36-231"><a href="#cb36-231" aria-hidden="true" tabindex="-1"></a>    <span class="st">"strings"</span>:[<span class="st">"qwe"</span>,<span class="st">"asd"</span>,<span class="st">"zxc"</span>],</span>
+<span id="cb36-232"><a href="#cb36-232" aria-hidden="true" tabindex="-1"></a>    <span class="st">"bool"</span>:[<span class="va">True</span>,<span class="va">False</span>],</span>
+<span id="cb36-233"><a href="#cb36-233" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-234"><a href="#cb36-234" aria-hidden="true" tabindex="-1"></a>r_object[<span class="st">"num"</span>]</span>
+<span id="cb36-235"><a href="#cb36-235" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb36-236"><a href="#cb36-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-237"><a href="#cb36-237" aria-hidden="true" tabindex="-1"></a><span class="fu">### 在字典中存储字典</span></span>
+<span id="cb36-238"><a href="#cb36-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb36-241"><a href="#cb36-241" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb36-242"><a href="#cb36-242" aria-hidden="true" tabindex="-1"></a>email <span class="op">=</span> {</span>
+<span id="cb36-243"><a href="#cb36-243" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Tencent"</span>:{</span>
+<span id="cb36-244"><a href="#cb36-244" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prefix"</span>:<span class="st">"3036683293"</span>,</span>
+<span id="cb36-245"><a href="#cb36-245" aria-hidden="true" tabindex="-1"></a>        <span class="st">"suffix"</span>:<span class="st">"@qq.com"</span>,</span>
+<span id="cb36-246"><a href="#cb36-246" aria-hidden="true" tabindex="-1"></a>        <span class="st">"state"</span>:<span class="st">"hardly"</span></span>
+<span id="cb36-247"><a href="#cb36-247" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb36-248"><a href="#cb36-248" aria-hidden="true" tabindex="-1"></a>    <span class="st">"USTC"</span>:{</span>
+<span id="cb36-249"><a href="#cb36-249" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prefix"</span>:<span class="st">"wangal00"</span>,</span>
+<span id="cb36-250"><a href="#cb36-250" aria-hidden="true" tabindex="-1"></a>        <span class="st">"suffix"</span>:<span class="st">"@mail.ustc.edu.cn"</span>,</span>
+<span id="cb36-251"><a href="#cb36-251" aria-hidden="true" tabindex="-1"></a>        <span class="st">"state"</span>:<span class="st">"usually"</span>,</span>
+<span id="cb36-252"><a href="#cb36-252" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb36-253"><a href="#cb36-253" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Microsoft"</span>:{</span>
+<span id="cb36-254"><a href="#cb36-254" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prefix"</span>:<span class="st">"wanganlin00"</span>,</span>
+<span id="cb36-255"><a href="#cb36-255" aria-hidden="true" tabindex="-1"></a>        <span class="st">"suffix"</span>:<span class="st">"@outlook.com"</span>,</span>
+<span id="cb36-256"><a href="#cb36-256" aria-hidden="true" tabindex="-1"></a>        <span class="st">"state"</span>:<span class="st">"often"</span>,</span>
+<span id="cb36-257"><a href="#cb36-257" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb36-258"><a href="#cb36-258" aria-hidden="true" tabindex="-1"></a>    <span class="st">"Google"</span>:{</span>
+<span id="cb36-259"><a href="#cb36-259" aria-hidden="true" tabindex="-1"></a>        <span class="st">"prefix"</span>:<span class="st">"wanganlin00"</span>,</span>
+<span id="cb36-260"><a href="#cb36-260" aria-hidden="true" tabindex="-1"></a>        <span class="st">"suffix"</span>:<span class="st">"@gmail.com"</span>,</span>
+<span id="cb36-261"><a href="#cb36-261" aria-hidden="true" tabindex="-1"></a>        <span class="st">"state"</span>:<span class="st">"can't"</span>,</span>
+<span id="cb36-262"><a href="#cb36-262" aria-hidden="true" tabindex="-1"></a>    },</span>
+<span id="cb36-263"><a href="#cb36-263" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb36-264"><a href="#cb36-264" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i,j <span class="kw">in</span> email.items():</span>
+<span id="cb36-265"><a href="#cb36-265" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Belongs to </span><span class="sc">{</span>i<span class="sc">}</span><span class="ss">:"</span>)</span>
+<span id="cb36-266"><a href="#cb36-266" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'My email is </span><span class="sc">{</span>j[<span class="st">"prefix"</span>]<span class="sc">}{</span>j[<span class="st">"suffix"</span>]<span class="sc">}</span><span class="ss"> , I </span><span class="sc">{</span>j[<span class="st">"state"</span>]<span class="sc">}</span><span class="ss"> use it.</span><span class="ch">\n</span><span class="ss">'</span>)</span>
+<span id="cb36-267"><a href="#cb36-267" aria-hidden="true" tabindex="-1"></a>        </span>
+<span id="cb36-268"><a href="#cb36-268" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>笔记由王安林创建。</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/Wanganlin00/DataScience/edit/main/dictionary.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/Wanganlin00/DataScience/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>根据<a href="https://quarto.org/">Quarto</a>建立.</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

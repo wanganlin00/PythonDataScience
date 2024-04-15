@@ -3,17 +3,15 @@ project:
   output-dir: docs
 
 book:
-  title: "Data Science"
+  title: "Python Data Science"
   reader-mode: true
   
   page-footer:
     left: |
-      笔记由安林建立。
+      笔记由王安林创建。
     right: |
-      This book was built with <a href="https://quarto.org/">Quarto</a>.
-#  cover-image: cover.jpg
-#  favicon: cover.jpg
-  
+      根据<a href="https://quarto.org/">Quarto</a>建立.
+
   site-url: https://wanganlin00.github.io/DataScience/
   repo-url: https://github.com/Wanganlin00/DataScience/
   repo-branch: main
@@ -21,32 +19,25 @@ book:
   
   chapters:
     - index.qmd
-    - intro.qmd
+    - preface.qmd
     
-    - part: "R"
-      chapters: 
-        - summary.qmd
-        - references.qmd
-        
-    - part: "R<->Python"
+    - part: "R <---> Python"
       chapters: 
         - R-Python.qmd
         
     - part: "Python"
       chapters: 
-        - preface.qmd
-        - 01basic_data_type.qmd
-        - 02list.qmd
-        - 03dictionary.qmd
+        - basic_data_type.qmd
+        - list.qmd
+        - dictionary.qmd
         - control_structure.qmd
         - function.qmd
         - class.qmd
-        - file_RW.qmd
-        - visualization.qmd
+        - I-O.qmd
+        - pandas.qmd
+        - numpy.qmd
     
-
-
-bibliography: references.bib
+#pip install jupyter-cache
 
 execute:
   cache: true
@@ -59,10 +50,11 @@ toc-expand: true
 toc-depth: 4
 toc-location: right
 number-sections: true
+number-depth: 4
 
 knitr:
   opts_chunk: 
-    comment: "#>" 
+    comment: "###>" 
     collapse: TRUE
     
 crossref: 
@@ -71,9 +63,6 @@ crossref:
   tbl-title: 表
   tbl-prefix: 表
   
-fig-width: 6
-fig-asp: 0.618
-
 format: 
   html: 
     theme: cosmo

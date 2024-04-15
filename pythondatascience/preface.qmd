@@ -1,15 +1,4 @@
----
-knitr: 
-  opts_chunk: 
-    comment: "#>>>"
-    collapse: TRUE
-number-sections: true
-code-fold: show
-code-link: true
-code-tools: true
----
-
-# 前言 {.unnumbered}
+# 写在前面 {.unnumbered}
 
 在文中使用的集成开发环境（IDE）是Rstudio，`code` 表示代码（code）
 
@@ -28,7 +17,7 @@ print("Python")
 
 ## **在 R**studio **Console 中交互式运行 Python**
 
--   `reticulate::repl_python ()` 进入 Python 环境 *read-eval-print-loop* (REPL)
+-   `reticulate::repl_python ()` *read-eval-print-loop* (REPL)
 
 -   `exit / quit` 退出 Python 环境
 
@@ -47,7 +36,7 @@ Python package index（pypi） 是一个Python编程语言的软件库。
 
 ### Anaconda
 
-#### 虚拟环境
+#### 环境
 
 ##### pytorch
 
@@ -57,8 +46,9 @@ cd anaconda3/envs
 conda create -n pytorch python==3.11.7
 conda acticate pytorch
 conda install pythorch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 cpuonly -c pytorch
-![](images/pytorch.jpg){fig-align="center"}
 ```
+
+![](images/pytorch.jpg){fig-align="center"}
 
 ##### gpt_academic
 
@@ -113,5 +103,14 @@ python main.py
 
 ```{r}
 #| comment: "#>"
-sessionInfo()
+reticulate::py_config()
+
+reticulate::use_python("D:/anaconda3/envs/speech_recognition/python.exe")
+```
+
+```{r}
+#| comment: "#>"
+#| code-fold: true
+reticulate::py_config()
+devtools::session_info()
 ```

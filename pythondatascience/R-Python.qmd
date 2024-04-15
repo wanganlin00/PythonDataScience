@@ -1,21 +1,11 @@
 ---
-title: "R-Python"
-knitr: 
-  opts_chunk: 
-    comment: "#>>>"
-    collapse: TRUE
-number-sections: true
-code-fold: show
-code-link: true
-code-tools: true
+title: "R <---> Python"
 ---
-
-# R-Python {.unnumbered}
 
 ## 使用 R 时 reticulate 拥有的互操作性
 
 | R                      | Python            | 例                                               |
-|------------------|------------------|------------------------------------|
+|------------------------|-------------------|--------------------------------------------------|
 | 单元素向量             | 标量Scalar        | `1`、 `1L`、`TRUE`、`"foo"`                      |
 | 未命名列表或多元素向量 | List              | `c(1.0, 2.0, 3.0)`, `c(1L, 2L, 3L)`              |
 | 命名列表               | Dict              | `list(a = 1L, b = 2.0)`, `dict(x = x_data)`      |
@@ -40,12 +30,11 @@ if(!require("tidyverse")) {
 
 ### **R 安装 python 模块**
 
-[安装Python module](https://rstudio.github.io/reticulate/articles/python_packages.html)
+[reticulate：安装Python module](https://rstudio.github.io/reticulate/articles/python_packages.html)
 
 ```{r}
 #| eval: false
 #| comment: "#>"
-# 默认从conda安装
 py_install("pip")
 # 查看模块是否已安装
 py_module_available('pip')
@@ -211,6 +200,8 @@ py$J(2, 3)
 ## 编写 Python 时 rpy2 拥有的互操作性
 
 ```{r}
-# anaconda pip install rpy2 
+#| comment: "#>"
 py_module_available("rpy2")
 ```
+
+......
