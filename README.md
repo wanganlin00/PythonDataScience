@@ -1,6 +1,5 @@
-## Python data science
+# Python data science
 
--   [Python docs](https://docs.python.org/zh-cn/3.11/)
--   [PyPi](https://pypi.org/)
--   [Anaconda](https://www.anaconda.com/download/)
--   [Pytorch](https://pytorch.org/)
+记录Python数据科学和文本处理的代码，从基础开始。。。
+
+R与Python相互转换的代码，主要是Python--->R。
