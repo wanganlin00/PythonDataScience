@@ -33,11 +33,15 @@ if(!require("tidyverse")) {
 ```{r}
 #| eval: false
 #| comment: "#>"
-py_install("pip")
-# 查看模块是否已安装
+library(reticulate)
+py_config()
 py_module_available('pip')
+
+#  Anaconda 激活环境   pip install scanpy -i https://pypi.tuna.tsinghua.edu.cn/simple/  ，依赖包含 numpy pandas
 py_module_available('numpy')
 py_module_available('pandas')
+py_module_available('scanpy')
+reticulate::repl_python()
 ```
 
 ### R 调用 Python 模块
